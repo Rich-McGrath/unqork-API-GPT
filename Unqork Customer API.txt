@@ -1,0 +1,4655 @@
+Unqork Customer API (1.0.0)Unqork's customer REST API, based on open standards, allows you to set and retrieve module submission data, as well as control other aspects of your Unqork environment. You can use any web development language to access the API, as communication is over secured HTTP. IP whitelisting can be implemented on request.
+URI Structure and Methods
+
+All API communication will occur over SSL (HTTPS). All API responses are in JSON format. All Unqork requests begin with the prefix:
+
+  https://{yourSubdomain}.unqork.io/api/1.0
+
+For example, if your subdomain is xyzfinancial, you would use the prefix https://xyzfinancial.unqork.io/api/1.0.
+
+The next segment of the URI path will vary based on the endpoint of the request.
+
+A given endpoint (resource) has a series of actions (methods) associated with it. The Unqork API supports these standard HTTP methods:
+
+    GET - retrieves data
+
+    PUT - updates existing data
+
+    POST - creates new data
+
+    DELETE - deletes existing data
+
+For example, you can use the POST action on the module submission resource to create a new module submission.
+Authentication
+
+The Unqork API implements the OAuth 2.0 Password Grant. Access via OAuth2 Password Grant can be enabled for all users in Environment Administration. Once enabled, all Unqork users can use their Unqork username/password to retrieve an access token.
+
+In order to utilize any of the API resources, you must first retrieve an access token by POSTing your credentials to the access token URL, e.g. using curl:
+
+  $ curl -X POST https://xyzfinancial.unqork.io/api/1.0/oauth2/access_token -d "grant_type=password&username={username}&password={password}"
+
+This returns an "access_token", which you would then retain and use in any subsequent resource requests. Access tokens expire after one hour, at which point you must retrieve a new one. The access token should be included in a request header:
+
+  $ curl -H "Authorization: Bearer {access_token}" https://xyzfinancial.unqork.io/api/1.0/{endpoint}
+
+Paging
+
+Paged endpoints use the Link header. If the link header "next" is present, then there are more items to retrieve, and the "next" should be followed.
+Cloud Storage Delivery
+
+Unqork exposes generated PDFs, uploaded attachments, and other file-like pieces of submission data via Cloud Storage Delivery URLs. These are signed, expiring links that allow the user to securely retrieve files stored in Unqork. Links can appear inside raw submission data, or they can be returned from PDF transform submission endpoints.
+
+These links cannot be shared with other parties; only the user who generated the link will be able to use the link. This means that the user must be authenticated (either in the browser, or by passing a valid OAuth Bearer token) in order to retrieve the file.
+
+Cloud Storage Delivery URLs will look like this:
+
+https://xyzfinancial.unqork.io/fbu/files/{filePath}?signature={signature}
+
+The file can be retrieved by accessing the link in the browser, or like this:
+
+  $ curl -H "Authorization: Bearer {access_token}" https://xyzfinancial.unqork.io/fbu/files/{filePath}?signature={signature}
+
+Nomenclature
+
+Previously, "Modules" were called "Forms". This nomenclature change affects all endpoints documented here in paths, request parameters, and response bodies (e.g. forms -> modules, formId -> moduleId; however, the behaviors of the endpoints are the same. The previous endpoints will continue to be supported, but they will be deprecated in the future.
+Users
+
+The following endpoints are available to "Administrator" users only.
+Get Users
+
+Returns user objects. This is a paged endpoint (see Paging). This endpoint is available to "Administrator" users only.
+query Parameters
+limit	
+integer <int32> <= 500
+Default: 50
+
+Maximum number of results to return (default 50, maximum 500)
+sort	
+string
+
+Field to sort by. Use [field name] for ascending and -[field name] for descending order. You can , seperate for multiple sort orders.
+filter	
+string
+
+Filter conditions for searching users, formatted like ?filter=name=Bill. The filters should be ; separated, as shown below. Supported fields are "role", "name", "phone", "email", "userId", "groups", "applicationRoles". All filter conditions are "starts with". NOTE: When filtering on created and modified, all timestamps are in UTC. You need to encode reserved url characters if they are part of the data you are filtering. Example, * ' ( ) : @ & = + $ , / ? % # [ ] You need to double encode ; as %253B if it is a part of the data you are filtering.
+
+Examples:
+
+    filter=email=john@doe.com will fetch all users starting with email "john@doe.com"
+    filter=role=Admin;created>2019-06-11T21:50:57.067Z will fetch all user with role starting with "Admin" and created after "2019-06-11T21:50:57.067Z" (UTC)
+    filter=modified=2019-06-11T21:50:57.067Z will fetch users modified at exactly "2019-06-11T21:50:57.067Z" (UTC)
+    filter=created>2019-06-11T00:00:00.000Z;created<2019-06-20T00:00:00.000Z will fetch users created between "2019-06-11T00:00:00.000Z" (UTC) and "2019-06-20T00:00:00.000Z" (UTC)
+
+Supported operators (as specified in this library api-query-params):
+
+    key=val type=public
+    key>val count>5
+    key>=val rating>=9.5
+    key<val createdAt<2016-01-01
+    key<=val score<=-5
+    key!=val status!=success
+    key=val1,val2 country=GB,US
+    key!=val1,val2 lang!=fr,en
+    key phone
+    !key !email
+    key=/value/ email=/@gmail\.com$/i
+    key!=/value/ phone!=/^06/
+
+showServiceUsers	
+boolean
+
+Field to allow show all users or all non service users. Note - The value should be passed as true/false Examples:
+
+    showServiceUsers=true will show all the users in the system
+    showServiceUsers=false will show all the non service users
+    If the argument is not passed, by default all non service users will be displayed.
+
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+[
+
+    {
+        "userId": "string",
+        "name": "string",
+        "email": "string",
+        "phone": "string",
+        "role": "Authenticated",
+        "groups": [ ],
+        "applicationRoles": { },
+        "created": "2019-08-24T14:15:22Z",
+        "modified": "2019-08-24T14:15:22Z",
+        "isServiceUser": true,
+        "lastLogin": "2019-08-24T14:15:22Z",
+        "...customAttributes": "string"
+    }
+
+]
+Create User
+
+Creates a new user. If userId is not specified, it is auto-generated and returned. This endpoint is available to "Administrator" users only.
+query Parameters
+shouldNotify	
+boolean
+
+Whether to notify the user via email of their temporary password.
+skipTemporaryPassword	
+boolean
+
+Whether to set the user's password as permanent immediately. A password must be provided in the body if this flag is set. This flag cannot be used if "shouldNotify" is also set.
+Request Body schema: application/json
+userId	
+string
+name
+required
+	
+string
+email
+required
+	
+string <email> <= 254 characters
+
+Quotes and special characters "(),:;<>@[]\ are not allowed. The local portion of the email (e.g. local@domain.com) must be > 0 characters and < 64 charaters. There cannot be consecutive dots (e.g. ..) in the email
+phone	
+string
+
+Must be a valid US phone number unless the country code is specified, in which case it is validated with libphonenumber-js
+role	
+string
+Default: "Authenticated"
+
+One of the roles configured in Unqork
+groups	
+Array of strings
+Default: []
+
+List of groups configured in Unqork OR comma-separated list of groups configured in Unqork (e.g. "group1,group2")
+applicationRoles	
+object
+
+Map of applications to roles OR comma-separated list of application-role mappings (e.g. "application1:role1,application2:role2")
+password	
+string <password>
+isServiceUser	
+boolean <true/false>
+...customAttributes	
+string
+
+Custom attributes can be included as additional keys in the request body. Only string values of custom attributes are supported.
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "userId": "string",
+    "name": "string",
+    "email": "user@example.com",
+    "phone": "string",
+    "role": "Authenticated",
+    "groups": [ ],
+    "applicationRoles": { },
+    "password": "pa$$word",
+    "isServiceUser": true,
+    "...customAttributes": "string"
+
+}
+Response samples
+
+    201default
+
+Content type
+application/json
+{
+
+    "userId": "string",
+    "name": "string",
+    "email": "string",
+    "phone": "string",
+    "role": "Authenticated",
+    "groups": [ ],
+    "applicationRoles": { },
+    "created": "2019-08-24T14:15:22Z",
+    "modified": "2019-08-24T14:15:22Z",
+    "isServiceUser": true,
+    "lastLogin": "2019-08-24T14:15:22Z",
+    "...customAttributes": "string"
+
+}
+Get User
+
+Returns a user object based on a user ID. This endpoint is available to "Administrator" users only.
+path Parameters
+userId
+required
+	
+string
+
+ID of user to retrieve
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "userId": "string",
+    "name": "string",
+    "email": "string",
+    "phone": "string",
+    "role": "Authenticated",
+    "groups": [ ],
+    "applicationRoles": { },
+    "created": "2019-08-24T14:15:22Z",
+    "modified": "2019-08-24T14:15:22Z",
+    "isServiceUser": true,
+    "lastLogin": "2019-08-24T14:15:22Z",
+    "...customAttributes": "string"
+
+}
+Update User
+
+Updates a single user. Partial updates are supported. To delete a specific custom attribute, pass null for that attribute. This endpoint is available to "Administrator" users only.
+path Parameters
+userId
+required
+	
+string
+
+ID of user to update
+query Parameters
+shouldNotify	
+boolean
+
+Whether to notify the user via email of their temporary password (only works if the user never changed their temporary password). This option MUST be specified if you want to change the user's temporary password to a different temporary password.
+Request Body schema: application/json
+userId	
+string
+name	
+string
+email	
+string <email> <= 254 characters
+
+Quotes and special characters "(),:;<>@[]\ are not allowed. The local portion of the email (e.g. local@domain.com) must be > 0 characters and < 64 charaters. There cannot be consecutive dots (e.g. ..) in the email
+phone	
+string
+
+Must be a valid US phone number unless the country code is specified, in which case it is validated with libphonenumber-js
+role	
+string
+
+One of the roles configured in Unqork
+groups	
+Array of strings
+
+List of groups configured in Unqork OR comma-separated list of groups configured in Unqork (e.g. "group1,group2")
+applicationRoles	
+object
+
+Map of applications to roles OR comma-separated list of application-role mappings (e.g. "application1:role1,application2:role2")
+password	
+string <password>
+isServiceUser	
+boolean <true/false>
+...customAttributes	
+string
+
+Custom attributes can be included as additional keys in the request body. Only string values of custom attributes are supported.
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "userId": "string",
+    "name": "string",
+    "email": "user@example.com",
+    "phone": "string",
+    "role": "string",
+    "groups": 
+
+    [
+        "string"
+    ],
+    "applicationRoles": { },
+    "password": "pa$$word",
+    "isServiceUser": true,
+    "...customAttributes": "string"
+
+}
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "userId": "string",
+    "name": "string",
+    "email": "string",
+    "phone": "string",
+    "role": "Authenticated",
+    "groups": [ ],
+    "applicationRoles": { },
+    "created": "2019-08-24T14:15:22Z",
+    "modified": "2019-08-24T14:15:22Z",
+    "isServiceUser": true,
+    "lastLogin": "2019-08-24T14:15:22Z",
+    "...customAttributes": "string"
+
+}
+Delete User
+
+Deletes a user based on the user ID supplied. Note that users are hard-deleted, and this is not reversible. This endpoint is available to "Administrator" users only. If a user is a system user, it cannot be deleted.
+path Parameters
+userId
+required
+	
+string
+
+ID of user to delete
+Responses
+Response samples
+
+    default
+
+Content type
+application/json
+{
+
+    "code": 400,
+    "message": "string"
+
+}
+Get User Password Status
+
+Returns the user's password status based on a user ID. This endpoint is available to "Administrator" users only.
+path Parameters
+userId
+required
+	
+string
+
+ID of user to retrieve
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "userId": "string",
+    "passwordStatus": "OK"
+
+}
+Groups
+
+The following endpoints are available to "Administrator" users only.
+Get Groups
+
+Returns group objects. This is a paged endpoint (see Paging). This endpoint is available to "Administrator" users only.
+query Parameters
+limit	
+integer <int32> <= 1000
+Default: 1000
+
+Maximum number of results to return (default 1000, maximum 1000)
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+[
+
+    {
+        "name": "string",
+        "description": "string",
+        "type": "role_descendents"
+    }
+
+]
+Create Group
+
+Creates a new group. This endpoint is available to "Administrator" users only.
+Request Body schema: application/json
+name
+required
+	
+string
+description	
+string
+type
+required
+	
+string
+Enum: "role_descendents" "own_role_and_descendents" "ignore_role"
+
+See Group Administration screen for definitions
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "name": "string",
+    "description": "string",
+    "type": "role_descendents"
+
+}
+Response samples
+
+    201default
+
+Content type
+application/json
+{
+
+    "name": "string",
+    "description": "string",
+    "type": "role_descendents"
+
+}
+Get Group
+
+Returns a group object based on a group name. This endpoint is available to "Administrator" users only.
+path Parameters
+groupName
+required
+	
+string
+
+Name of group to retrieve
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "name": "string",
+    "description": "string",
+    "type": "role_descendents"
+
+}
+Update Group
+
+Updates a single group. Partial updates are supported. This endpoint is available to "Administrator" users only.
+path Parameters
+groupName
+required
+	
+string
+
+Name of group to update
+Request Body schema: application/json
+name	
+string
+description	
+string
+type	
+string
+Enum: "role_descendents" "own_role_and_descendents" "ignore_role"
+
+See Group Administration screen for definitions
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "name": "string",
+    "description": "string",
+    "type": "role_descendents"
+
+}
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "name": "string",
+    "description": "string",
+    "type": "role_descendents"
+
+}
+Delete Group
+
+Deletes a group based on the group name supplied. Note that groups are hard-deleted, and this is not reversible. This endpoint is available to "Administrator" users only.
+path Parameters
+groupName
+required
+	
+string
+
+Name of group to delete
+Responses
+Response samples
+
+    default
+
+Content type
+application/json
+{
+
+    "code": 400,
+    "message": "string"
+
+}
+Promotions
+
+The following endpoints are available to "Administrator" users and users with the "Promote" permission for the resource.
+Promotion Hosts
+
+Returns list of environments authorized for promotion
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+[
+
+    {
+        "clientName": "string",
+        "clientLevel": "string"
+    }
+
+]
+Promote Module
+
+Promote a specific module
+Request Body schema: application/json
+clientName
+required
+	
+string
+
+Name of the client as defined
+clientLevel
+required
+	
+string
+
+Level of the environment. Ex - qa, uat, production etc
+moduleId
+required
+	
+string
+
+ID of module to Promote
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "clientName": "string",
+    "clientLevel": "string",
+    "moduleId": "string"
+
+}
+Response samples
+
+    default
+
+Content type
+application/json
+{
+
+    "code": 400,
+    "message": "string"
+
+}
+Promote Reference Data
+
+Promote a collection of reference data
+Request Body schema: application/json
+clientName
+required
+	
+string
+
+Name of the client as defined
+clientLevel
+required
+	
+string
+
+Level of the environment. Ex - qa, uat, production etc
+collectionName
+required
+	
+string
+
+Name of the reference data collection to promote
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "clientName": "string",
+    "clientLevel": "string",
+    "collectionName": "string"
+
+}
+Response samples
+
+    default
+
+Content type
+application/json
+{
+
+    "code": 400,
+    "message": "string"
+
+}
+Promote Application by items
+
+Promote a specific application with Modules, Workflows, Data Schemas, Data Collections, Module Archives, or Workflow Archives
+Request Body schema: application/json
+clientName
+required
+	
+string
+
+Name of the client as defined
+clientLevel
+required
+	
+string
+
+Level of the environment. Ex - qa, uat, production etc
+applicationId
+required
+	
+string
+
+applicationId of the application to promote
+modules	
+Array of strings
+
+Array of Modules to Promote
+referenceDataCollections	
+Array of strings
+
+Array of Reference Data Collections to Promote
+Array of objects
+
+Array of Module Archives to Promote. Must include the moduleId
+workflowArchives	
+Array of strings
+
+Array of Workflow Archives to Promote
+workflows	
+Array of strings
+
+Array of Workflows to Promote
+dataSchemaIds	
+Array of strings
+
+Array of Data Schemas to Promote
+dataModels	
+Array of strings
+
+Array of Data Models to Promote
+schemas	
+Array of strings
+
+Array of Data Model Schemas to Promote
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "clientName": "string",
+    "clientLevel": "string",
+    "applicationId": "string",
+    "modules": 
+
+[
+
+    "moduleId1",
+    "moduleId2"
+
+],
+"referenceDataCollections": 
+[
+
+    "collectionName1",
+    "collectionName2"
+
+],
+"moduleArchives": 
+[
+
+    {}
+
+],
+"workflowArchives": 
+[
+
+    "workflowArchiveId1",
+    "workflowArchiveId2"
+
+],
+"workflows": 
+[
+
+    "workflowId1",
+    "workflowId2"
+
+],
+"dataSchemaIds": 
+[
+
+    "dataSchemaId1",
+    "dataSchemaId2"
+
+],
+"dataModels": 
+[
+
+    "dataModelId1",
+    "dataModelId2"
+
+],
+"schemas": 
+
+    [
+        "schemaId1",
+        "schemaId2"
+    ]
+
+}
+Response samples
+
+    default
+
+Content type
+application/json
+{
+
+    "code": 400,
+    "message": "string"
+
+}
+Promote Style
+
+Promote a specific Style
+Request Body schema: application/json
+clientName
+required
+	
+string
+
+Name of the client as defined
+clientLevel
+required
+	
+string
+
+Level of the environment. Ex - qa, uat, production etc
+styleName
+required
+	
+string
+
+Style name of the style to promote
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "clientName": "string",
+    "clientLevel": "string",
+    "styleName": "string"
+
+}
+Response samples
+
+    default
+
+Content type
+application/json
+{
+
+    "code": 400,
+    "message": "string"
+
+}
+Promote Groups
+
+Promote specific groups or all groups
+Request Body schema: application/json
+clientName
+required
+	
+string
+
+Name of the client as defined
+clientLevel
+required
+	
+string
+
+Level of the environment. Ex - qa, uat, production etc
+groupNames	
+Array of strings
+
+Names of the groups to promote
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "clientName": "string",
+    "clientLevel": "string",
+    "groupNames": 
+
+    [
+        "string"
+    ]
+
+}
+Response samples
+
+    default
+
+Content type
+application/json
+{
+
+    "code": 400,
+    "message": "string"
+
+}
+Promote Roles
+
+Promote all roles
+Request Body schema: application/json
+clientName
+required
+	
+string
+
+Name of the client as defined
+clientLevel
+required
+	
+string
+
+Level of the environment. Ex - qa, uat, production etc
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "clientName": "string",
+    "clientLevel": "string"
+
+}
+Response samples
+
+    default
+
+Content type
+application/json
+{
+
+    "code": 400,
+    "message": "string"
+
+}
+Applications
+
+An application is the parent of a group of one or more elements. An application can be of either 'Module' (type is form in DB) or 'Workflow' type. 'Module' type application cannot have workflow but can have data collections. 'Workflow' type application can have both modules and data collections. There can be only a single workflow in an application.
+
+The following endpoints are available to "Administrator" users only.
+Determine if a resource is in an application
+
+Determines if a resource is in an application.
+path Parameters
+applicationId
+required
+	
+string
+
+Unique identifier for an application
+appType
+required
+	
+string
+
+Type of application, either 'module' or 'workflow'
+resourceId
+required
+	
+string
+
+Unique identifier for a resource
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "status": true
+
+}
+Get components export
+
+Builds and returns a CSV file export of application components.
+
+A file will be downloaded if triggered in the browser with the file name of application-{applicationId}-components.csv
+
+Header:
+
+"Module Name","Component Type","Component Label","Component Property Name","Is Hidden? (Y/N)","Is Disabled? (Y/N)","Is Persistent? (Y/N)","Field Tags","Is Required? (Y/N)"
+
+Example:
+
+"testapp","textfield","Text Field","firstName","N","N","Y","textField,name","N"
+
+"testapp","button","Submit","btn","N","N","N","","N"
+
+"testapp","textarea","Text Area Field","textareaField","N","N","Y","","N"
+path Parameters
+applicationId
+required
+	
+string
+
+Unique identifier for an application
+Responses
+Response samples
+
+    default
+
+Content type
+application/json
+{
+
+    "code": 400,
+    "message": "string"
+
+}
+Get submission data model
+
+Builds a summary of the submission data model for an application.
+path Parameters
+applicationId
+required
+	
+string
+
+Unique identifier for an application
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "schema": 
+
+{
+
+    "type": "string",
+    "properties": { }
+
+},
+"modules": 
+{
+
+    "moduleId": 
+
+        {}
+    }
+
+}
+Get application dependencies
+
+Builds an application's module dependency tree.
+path Parameters
+applicationId
+required
+	
+string
+
+Unique identifier for an application
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+[
+
+{
+
+    "moduleId": "string",
+    "moduleName": "string",
+    "moduleTitle": "string",
+    "sharedAnywhere": true,
+    "parentApplicationTitle": "string",
+    "isRootDependency": true,
+    "children": 
+
+        []
+    }
+
+]
+Get application's data models dependencies
+
+Returns the dependency list for application's data models
+path Parameters
+applicationId
+required
+	
+string
+
+Unique identifier for an application
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "dataModels": 
+
+[
+
+    { }
+
+],
+"schemas": 
+[
+
+    { }
+
+],
+"modules": 
+
+    [
+        { }
+    ]
+
+}
+Get application modules
+
+Gets a list of modules tied to an application.
+path Parameters
+applicationId
+required
+	
+string
+
+Unique identifier for an application
+query Parameters
+collation	
+string
+
+Collation locale
+limit	
+string
+Default: 50
+
+Maximum number of modules to return
+offset	
+integer
+Default: 0
+
+Index of search results at which to begin returning results
+sortBy	
+string
+
+Field to sort the results by
+sortOrder	
+integer
+
+Order to sort results by (1 = ascending, -1 = decending)
+includeShared	
+boolean
+Default: false
+
+Include modules shared to parent workspace or the environment
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+[
+
+    {
+        "id": "string",
+        "name": "string",
+        "title": "string",
+        "created": "string",
+        "modified": "string"
+    }
+
+]
+Determine if an application's name is unique
+
+Determines if an application's name is unique.
+query Parameters
+name
+required
+	
+string
+
+Name to check if it is an unique application name
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+true
+Get application workspace
+
+Gets the workspace that contains the application.
+path Parameters
+applicationId
+required
+	
+string
+
+Unique identifier for an application
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "private": true,
+    "parent": "string",
+    "_id": "string",
+    "name": "string",
+    "owner": "string",
+    "created": "string",
+    "modified": "string"
+
+}
+Restore application
+
+Restores an application.
+path Parameters
+applicationId
+required
+	
+string
+
+Unique identifier for an application
+Request Body schema: application/json
+workspaceId	
+string
+
+Unique identifier for the workspace to restore the application to
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "workspaceId": "string"
+
+}
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "created": "string",
+    "createdBy": "string",
+    "dataSchemas": 
+
+    [
+        { }
+    ],
+    "description": "string",
+    "id": "string",
+    "modified": "string",
+    "modifiedBy": "string",
+    "name": "string",
+    "promotions": { },
+    "settings": { },
+    "title": "string",
+    "type": "string",
+    "workspaceId": "string"
+
+}
+Connect application
+
+Connects elements to an application.
+path Parameters
+applicationId
+required
+	
+string
+
+Unique identifier for an application
+Request Body schema: application/json
+elementType
+required
+	
+string
+
+Describes the element being connected to the application. Value should be either 'module' or 'referenceDataCollection'.
+elementKeys
+required
+	
+Array of strings
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "elementType": "string",
+    "elementKeys": 
+
+    [
+        "string"
+    ]
+
+}
+Response samples
+
+    default
+
+Content type
+application/json
+{
+
+    "code": 400,
+    "message": "string"
+
+}
+Create application
+
+Create a new application.
+Request Body schema: application/json
+id
+required
+	
+string
+
+Id of the new application
+name
+required
+	
+string
+
+Name of the new application
+settings	
+object
+revisions	
+boolean
+title
+required
+	
+string
+
+Title of the new application
+type
+required
+	
+string
+
+Type of the new application ('form' or 'workflow')
+workspaceId	
+string
+
+Workspace Id that should contain the new application (default workspace will be used)
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "id": "string",
+    "name": "string",
+    "settings": { },
+    "revisions": true,
+    "title": "string",
+    "type": "string",
+    "workspaceId": "string"
+
+}
+Response samples
+
+    201default
+
+Content type
+application/json
+{
+
+    "created": "string",
+    "createdBy": "string",
+    "dataSchemas": 
+
+    [
+        { }
+    ],
+    "description": "string",
+    "id": "string",
+    "modified": "string",
+    "modifiedBy": "string",
+    "name": "string",
+    "promotions": { },
+    "settings": { },
+    "title": "string",
+    "type": "string",
+    "workspaceId": "string"
+
+}
+Get applications
+
+Get a list of matching applications, will be filtered by your accessible workspaces based on permissions.
+query Parameters
+limit	
+integer
+Default: 1000
+
+Integer to limit the number of applications returned (Cannot exceed 1000)
+sortBy	
+string
+Default: "created"
+
+Field to sort found applications by
+offset	
+integer
+Default: 0
+
+Offset for paginated results
+sortOrder	
+integer
+Default: 1
+
+Sort order for found applications (1 = ascending, -1 = descending)
+requireEntrypoint	
+boolean
+Default: true
+
+Remove applications that do not have an entrypoint module/workflow
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+[
+
+{
+
+    "created": "string",
+    "createdBy": "string",
+    "dataSchemas": 
+
+        [],
+        "description": "string",
+        "id": "string",
+        "modified": "string",
+        "modifiedBy": "string",
+        "name": "string",
+        "promotions": { },
+        "settings": { },
+        "title": "string",
+        "type": "string",
+        "workspaceId": "string"
+    }
+
+]
+Get application
+
+Retrieves application data.
+path Parameters
+applicationId
+required
+	
+string
+
+Unique identifier for an application
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "created": "string",
+    "createdBy": "string",
+    "dataSchemas": 
+
+    [
+        { }
+    ],
+    "description": "string",
+    "id": "string",
+    "modified": "string",
+    "modifiedBy": "string",
+    "name": "string",
+    "promotions": { },
+    "settings": { },
+    "title": "string",
+    "type": "string",
+    "workspaceId": "string"
+
+}
+Update application
+
+Updates an existing application.
+path Parameters
+applicationId
+required
+	
+string
+
+Unique identifier for an application
+Request Body schema: application/json
+name	
+string
+
+Updated name
+settings	
+object
+
+Updated settings
+title	
+string
+
+Updated title
+workspaceId	
+string
+
+Updated workspace Id
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "name": "string",
+    "settings": { },
+    "title": "string",
+    "workspaceId": "string"
+
+}
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "created": "string",
+    "createdBy": "string",
+    "dataSchemas": 
+
+    [
+        { }
+    ],
+    "description": "string",
+    "id": "string",
+    "modified": "string",
+    "modifiedBy": "string",
+    "name": "string",
+    "promotions": { },
+    "settings": { },
+    "title": "string",
+    "type": "string",
+    "workspaceId": "string"
+
+}
+Delete application
+
+Deletes application.
+path Parameters
+applicationId
+required
+	
+string
+
+Unique identifier for an application
+Responses
+Response samples
+
+    default
+
+Content type
+application/json
+{
+
+    "code": 400,
+    "message": "string"
+
+}
+Transforms
+
+The following endpoints are available to "Administrator" users only. Transforms should expect the following input data structure:
+
+NJK (in):
+Input includes only the data.rawData part of the submission object.
+
+  {
+    "firstName": "Al"
+  }
+
+NJK (out):
+Input includes all of the top-level properties of the submission object, except data here refers to data.rawData.
+
+  {
+    "data": {
+      "firstName": "Al"
+    },
+    "metadata": {},
+    "created": "2018-01-01T00:00:00.000Z",
+    ...
+  }
+
+XML (out):
+Input includes all of the top-level properties of the submission object, except data here refers to data.rawData.
+
+  <submission>
+    <data>
+      <firstName>Al</firstName>
+    </data>
+    <metadata>
+    </metadata>
+    <created>2018-01-01T00:00:00.000Z</created>
+    ...
+  </submission>
+
+Get Transforms
+
+Returns transform objects. This is a paged endpoint (see Paging). This endpoint is available to "Administrator" users only.
+path Parameters
+moduleId
+required
+	
+string
+
+Unique module ID
+query Parameters
+limit	
+integer <int32> <= 1000
+Default: 50
+
+Maximum number of results to return (default 50, maximum 1000)
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+[
+
+    {
+        "name": "string",
+        "moduleId": "string",
+        "type": "njk-xml",
+        "io": "in",
+        "template": "string",
+        "validationSchema": "string"
+    }
+
+]
+Create Transform
+
+Creates a new transform. This endpoint is available to "Administrator" users only.
+path Parameters
+moduleId
+required
+	
+string
+
+Unique module ID
+Request Body schema: application/json
+name
+required
+	
+string
+
+name can only contain alphanumeric and hyphens
+type
+required
+	
+string
+Enum: "njk-xml" "njk-pdf" "njk-txt" "njk" "xsl"
+io
+required
+	
+string
+Enum: "in" "out"
+template	
+string
+validationSchema	
+string
+
+xsd schema used to validate XML transform output
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "name": "string",
+    "type": "njk-xml",
+    "io": "in",
+    "template": "string",
+    "validationSchema": "string"
+
+}
+Response samples
+
+    201default
+
+Content type
+application/json
+{
+
+    "name": "string",
+    "moduleId": "string",
+    "type": "njk-xml",
+    "io": "in",
+    "template": "string",
+    "validationSchema": "string"
+
+}
+Get Transform
+
+Returns a transform object based on a module ID and transform name. This endpoint is available to "Administrator" users only.
+path Parameters
+moduleId
+required
+	
+string
+
+Unique module ID
+transformName
+required
+	
+string
+
+Name of transform
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "name": "string",
+    "moduleId": "string",
+    "type": "njk-xml",
+    "io": "in",
+    "template": "string",
+    "validationSchema": "string"
+
+}
+Update Transform
+
+Updates a single transform. This endpoint is available to "Administrator" users only.
+path Parameters
+moduleId
+required
+	
+string
+
+Unique module ID
+transformName
+required
+	
+string
+
+Name of transform to update
+Request Body schema: application/json
+name
+required
+	
+string
+
+name can only contain alphanumeric and hyphens
+type	
+string
+Enum: "njk-xml" "njk-pdf" "njk-txt" "njk" "xsl"
+io	
+string
+Enum: "in" "out"
+template	
+string
+validationSchema	
+string
+
+xsd schema used to validate XML transform output
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "name": "string",
+    "type": "njk-xml",
+    "io": "in",
+    "template": "string",
+    "validationSchema": "string"
+
+}
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "name": "string",
+    "moduleId": "string",
+    "type": "njk-xml",
+    "io": "in",
+    "template": "string",
+    "validationSchema": "string"
+
+}
+Delete Transform
+
+Deletes a transform based on the transform name supplied. This endpoint is available to "Administrator" users only.
+path Parameters
+moduleId
+required
+	
+string
+
+Unique module ID
+transformName
+required
+	
+string
+
+Name of transform to delete
+Responses
+Response samples
+
+    default
+
+Content type
+application/json
+{
+
+    "code": 400,
+    "message": "string"
+
+}
+Authentication
+Generates an encrypted referstring for authentication
+
+This endpoint will generate encrypted refer strings that can be used to authenticate users into an Unqork environment
+
+Environment Variables - The following Environment Variables are required
+
+    key : key for encryption
+
+    cipher : method of encryption. The default and recommended cipher is aes-256-gcm.
+
+    Include this refer string in the link to an Unqork resource as follows
+
+    <hostname>?refer=<referString>/#/display/<resource_id>
+
+        hostname - host name of Unqork server
+        referString - referString returned from API
+        resource_id - Id of the Unqork resource to viewFor example, https://client.unqork.io?refer=/#/display/abcd123
+
+    Examples
+
+    Example 1: Generate Refer String for 1 day (default role)
+
+    Request
+
+     {
+       "userId": "user123",
+       "expireOffset": 1,
+       "expireMeasure": "days"
+     }
+
+    Response
+
+     {
+       "referString": "<encrypted refer string>"
+     }
+
+    Example 2: Generate Refer String for single use (recommended)
+
+    Request
+
+     {
+       "userId": "user123",
+       "expireOffset": 1,
+       "expireMeasure": "days",
+       "oneTimeUse": true
+     }
+
+    Response
+
+     {
+       "referString": "<encrypted refer string>"
+     }
+
+    Example 3: Generate Refer String for custom role
+
+    Request
+
+     {
+       "userId": "user123",
+       "expireOffset": 1,
+       "expireMeasure": "days",
+       "additionalParams": {
+         "role": "customRole"
+       }
+     }
+
+    Response
+
+     {
+       "referString": "<encrypted refer string>"
+     }
+
+    Example 4: Generate Refer String with custom user parameters
+
+    Request
+
+     {
+       "userId": "user123",
+       "expireOffset": 1,
+       "expireMeasure": "days",
+       "additionalParams": {
+         "custom1": "custom value 1",
+         "custom1": "custom value 2",
+         "custom1": "custom value 3"
+       }
+     }
+
+    Response
+
+     {
+       "referString": "<encrypted refer string>"
+     }
+
+Request Body schema: application/json
+userId
+required
+	
+string
+
+Unique ID of the user, as a string
+expireOffset	
+integer
+
+Provides an amount of time until expiry, used in conjunction with the units from expireMeasure. Maximum offset 30 days or equivalent. Default offset 1 (default unit is hours).
+expireMeasure	
+string
+
+String with the units for the expireOffset parameter (e.g. hours, days). Maximum offset 8 days or equivalent. Default measure hours (Default offset is 1)
+oneTimeUse	
+boolean
+
+Limits the refer string to 1 use. For best security, it is recommended to set oneTimeUse to true.
+additionalParams	
+object
+
+An object with anything else to be added to referstring
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "userId": "string",
+    "expireOffset": 0,
+    "expireMeasure": "string",
+    "oneTimeUse": true,
+    "additionalParams": { }
+
+}
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "referString": "string"
+
+}
+Submissions
+Get Module Submissions
+
+Returns module submission objects for a given module. This is a paged endpoint (see Paging). Module submission data is transformed and returned in a specific format, based on the specified transform. JSON submission data is returned as an object, XML data is returned as a string, and PDF data is returned as a Cloud Storage Delivery URL to the rendered PDF (and optionally base 64 data).
+path Parameters
+moduleId
+required
+	
+string
+
+Unique module ID
+query Parameters
+transformName	
+string
+
+Transform to apply to module for output. Transform must be configured and designated for for output. Available transforms may be listed via the /transforms endpoint
+limit	
+integer <int32> <= 50
+Default: 50
+
+Maximum number of results to return (default 50, maximum 50)
+offset	
+integer <int32>
+Default: 0
+
+Number of results to skip before selecting results. Offset is zero based.
+sortBy	
+string
+
+Field to sort by (currently supported - created, modified)
+sortOrder	
+integer
+Default: 1
+Enum: 1 -1
+
+Order of sort, if sortBy is specified. One of [1 (ascending),-1 (descending)]
+includeDeleted	
+boolean
+Default: false
+
+Include deleted objects in response (default false). Expected values - true/false
+metadataFilter	
+string
+
+Filter condition against submission "metadata" field. Value must be a stringified MongoDB query condition (see Examples, below). MongoDB dot notation is supported for keys.
+
+NOTE: MongoDB selectors that can be nested inside queries (such as Comparison and Element Selectors, e.g. $eq, $in, $exists) are supported. The following Logical Selectors are also supported: $and, $or, $nor
+
+Examples:
+
+    metadataFilter: {"checkpoints.complete": 1234}
+
+    metadataFilter: {"checkpoints.complete": {"$exists": true}, "checkpoints.processed": {"$exists": false}}
+        Will return submissions where both metadata.checkpoints.complete exists AND metadata.checkpoints.processed does not exist
+
+includeRaw	
+boolean
+
+Whether to include the untransformed raw submission data in addition to the transformed data. Raw submission data may contain Cloud Storage Delivery URLs.
+includeBase64	
+boolean
+
+Whether to include base64 PDF data in addition to the PDF url (for "njk-pdf" transforms)
+resolveCloudStorageUrls	
+boolean
+
+When transformName is specified, Cloud Storage URLs are already resolved to the original base64 value. When this flag is specified, resolve Cloud Storage URLs to base64 data inside "rawData", as well.
+dataFields	
+string
+
+Comma-separated list of dot-notation data fields to retrieve; for example, &dataFields=field1,also.field2 will retrieve {"data":{"field1":"v1","also":{"field2":"v2"}}}. Do not include "data" in front of each field. All other submission fields will always be retrieved.
+filter	
+string
+
+Filter conditions against submissions. Currently supported filter conditions are userId, created, and modified. The filters should be ; separated, as shown below. NOTE: When filtering on created and modified, all timestamps are in UTC.
+
+Examples:
+
+    filter=userId=john@doe.com will fetch all submissions owned by "john@doe.com"
+    filter=userId=john@doe.com;created>2019-06-11T21:50:57.067Z will fetch all submissions owned by "john@doe.com" and created after "2019-06-11T21:50:57.067Z" (UTC)
+    filter=modified=2019-06-11T21:50:57.067Z will fetch submissions modified at exactly "2019-06-11T21:50:57.067Z" (UTC)
+    filter=created>2019-06-11T00:00:00.000Z;created<2019-06-20T00:00:00.000Z will fetch submissions created between "2019-06-11T00:00:00.000Z" (UTC) and "2019-06-20T00:00:00.000Z" (UTC)
+
+Supported operators (as specified in this library api-query-params):
+
+    key=val type=public
+    key>val count>5
+    key>=val rating>=9.5
+    key<val createdAt<2016-01-01
+    key<=val score<=-5
+    key!=val status!=success
+    key=val1,val2 country=GB,US
+    key!=val1,val2 lang!=fr,en
+    key phone
+    !key !email
+    key=/value/ email=/@gmail\.com$/i
+    key!=/value/ phone!=/^06/
+
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+[
+
+{
+
+    "id": "string",
+    "userId": "string",
+    "moduleId": "string",
+    "created": "2019-08-24T14:15:22Z",
+    "modified": "2019-08-24T14:15:22Z",
+    "deleted": "2019-08-24T14:15:22Z",
+    "data": 
+
+{},
+"metadata": { },
+"validationErrors": 
+
+        []
+    }
+
+]
+Create Module Submission(s)
+
+Creates one or more new module submission. Submission ID is auto-generated and returned. Module submission data must be provided as a JSON object. In case of multiple submissions, Request Body must contain an Array of below defined request body structure. Max Limit per request is 50.
+path Parameters
+moduleId
+required
+	
+string
+
+Unique module ID
+query Parameters
+transformName	
+string
+
+Transform to apply to module for input. Transform must be configured and designated for for input. Available transform types may be listed via the /transforms endpoint.
+Request Body schema: application/json
+userId	
+string
+
+Submission owner
+data
+required
+	
+object
+
+Raw input data
+metadata	
+object (MetadataRequest)
+
+Object containing key-value pairs. To set nested values, this must be an object like {"statuses.complete": "yes", "statuses.processed": "no"}, which is MongoDB dot notation.
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "userId": "string",
+    "data": { },
+    "metadata": { }
+
+}
+Response samples
+
+    201default
+
+Content type
+application/json
+{
+
+    "id": "string",
+    "userId": "string",
+    "moduleId": "string",
+    "created": "2019-08-24T14:15:22Z",
+    "modified": "2019-08-24T14:15:22Z",
+    "deleted": "2019-08-24T14:15:22Z",
+    "data": 
+
+{
+
+    "rawData": { }
+
+},
+"metadata": { },
+"validationErrors": 
+[
+
+        {}
+    ]
+
+}
+Update Multiple Module Submissions
+
+Updates multiple module submissions. This operation supports partial "data" updates, i.e. data that is sent in "data" may include some but not all of the submission data. Partial metadata updates are supported without including the entire metadata object. To increment a numeric data key (will also initialize), use "incrementData" To delete a data key, use "unsetData". To delete a metadata key, use "unsetMetadata". To replace the entire data object, use the "replaceData" flag. Module submission data must be provided as a JSON object. Max Limit per request is 50.
+path Parameters
+moduleId
+required
+	
+string
+
+Unique module ID
+query Parameters
+replaceData	
+boolean
+Default: false
+
+Whether to completely replace the submission data with the object passed in "data". This option is available to "Administrator" users only.
+Request Body schema: application/json
+Array ()
+id	
+string
+data	
+object
+
+Raw input data
+dataFilter	
+object (DataFilter)
+
+Filter condition against submission "data" field. Value must be a MongoDB query condition (see Examples, below).
+
+NOTE: MongoDB selectors that can be nested inside queries (such as Comparison and Element Selectors, e.g. $eq, $in, $exists) are supported. The following Logical Selectors are also supported: $and, $or, $nor
+
+Examples:
+
+    dataFilter: {"age": 30}
+
+    dataFilter: {"age": {"$gt": 30}, "people.1.gender": "male"}
+        Will match submission where age > 30 and gender for the 2nd people element equals "male"
+
+incrementData	
+object
+
+Object containing data keys that should be incremented, and by what number (e.g. {"incrementData":{"key1":1,"key2":10}})
+unsetData	
+object
+
+Object containing data keys that should be deleted (e.g. {"unsetData":{"key1":"","key2":""}})
+metadata	
+object (MetadataRequest)
+
+Object containing key-value pairs. To set nested values, this must be an object like {"statuses.complete": "yes", "statuses.processed": "no"}, which is MongoDB dot notation.
+metadataFilter	
+object (MetadataFilter)
+
+Filter condition against submission "metadata" field. Value must be a MongoDB query condition (see Examples, below). MongoDB dot notation is supported for keys.
+
+NOTE: MongoDB selectors that can be nested inside queries (such as Comparison and Element Selectors, e.g. $eq, $in, $exists) are supported. The following Logical Selectors are also supported: $and, $or, $nor
+
+Examples:
+
+    metadataFilter: {"checkpoints.complete": 1234}
+
+    metadataFilter: {"checkpoints.complete": {"$exists": true}, "checkpoints.processed": {"$exists": false}}
+        Will return submissions where both metadata.checkpoints.complete exists AND metadata.checkpoints.processed does not exist
+
+unsetMetadata	
+object
+
+Object containing metadata keys that should be deleted (e.g. {"unsetMetadata":{"key.one":"","key.two":""}})
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+[
+
+    {
+        "id": "string",
+        "data": { },
+        "dataFilter": { },
+        "incrementData": { },
+        "unsetData": { },
+        "metadata": { },
+        "metadataFilter": { },
+        "unsetMetadata": { }
+    }
+
+]
+Response samples
+
+    200default
+
+Content type
+application/json
+[
+
+    {
+        "id": "string",
+        "status": 0,
+        "message": "string"
+    }
+
+]
+Deletes Multiple Module Submissions
+
+Deletes multiple module submission based on the ID supplied. Note that module submissions are soft-deleted (marked deleted, but not removed). Default Max Limit per request is 50
+path Parameters
+moduleId
+required
+	
+string
+
+Unique module ID
+query Parameters
+destroy	
+boolean
+Default: false
+
+Whether to hard delete the submission from database. Value of 'destroy=true' will delete the submission. This option requires administrator privileges. Once deleted, the submission cannot be retrieved.
+ids	
+string
+
+A comma seperated list of the ids required to be deleted. Note - Max limit is 50 Per Request Example - ?ids=id1,id2,id3....
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+[
+
+    {
+        "id": "string",
+        "status": 0,
+        "message": "string"
+    }
+
+]
+Get Module Submission
+
+Gets a single module submission. Module submission data is transformed and returned is a specific format, based on the specified transform. JSON submission data is returned as an object, XML data is returned as a string, and PDF data is returned as a Cloud Storage Delivery URL to the rendered PDF (and optionally base 64 data).
+path Parameters
+moduleId
+required
+	
+string
+
+Unique module ID
+submissionId
+required
+	
+string
+
+ID of module submission to retrieve
+query Parameters
+transformName	
+string
+
+Transform to apply to module for output. Transform must be configured and designated for for output. Available transforms may be listed via the /transforms endpoint
+includeRaw	
+boolean
+
+Whether to include the untransformed raw submission data in addition to the transformed data. Raw submission data may contain Cloud Storage Delivery URLs.
+includeBase64	
+boolean
+
+Whether to include base64 PDF data in addition to the PDF url (for "njk-pdf" transforms)
+resolveCloudStorageUrls	
+boolean
+
+When transformName is specified, Cloud Storage URLs are already resolved to the original base64 value. When this flag is specified, resolve Cloud Storage URLs to base64 data inside "rawData", as well.
+dataFields	
+string
+
+Comma-separated list of dot-notation data fields to retrieve; for example, &dataFields=field1,also.field2 will retrieve {"data":{"field1":"v1","also":{"field2":"v2"}}}. Do not include "data" in front of each field. All other submission fields will always be retrieved.
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "id": "string",
+    "userId": "string",
+    "moduleId": "string",
+    "created": "2019-08-24T14:15:22Z",
+    "modified": "2019-08-24T14:15:22Z",
+    "deleted": "2019-08-24T14:15:22Z",
+    "data": 
+
+{
+
+    "format": "json",
+    "jsonData": { },
+    "xmlData": "string",
+    "pdfUrl": "string",
+    "pdfData": "string",
+    "rawData": { }
+
+},
+"metadata": { },
+"validationErrors": 
+[
+
+        {}
+    ]
+
+}
+Update Module Submission
+
+Updates a single module submission. This operation supports partial "data" updates, i.e. data that is sent in "data" may include some but not all of the submission data. Partial metadata updates are supported without including the entire metadata object. To increment a numeric data key (will also initialize), use "incrementData" To delete a data key, use "unsetData". To delete a metadata key, use "unsetMetadata". Module submission data must be provided as a JSON object.
+path Parameters
+moduleId
+required
+	
+string
+
+Unique module ID
+submissionId
+required
+	
+string
+
+ID of module submission to update
+query Parameters
+transformName	
+string
+
+Transform to apply to module for input. Transform must be configured and designated for for input. Available transform types may be listed via the /transforms endpoint.
+replaceData	
+boolean
+Default: false
+
+Whether to completely replace the submission data with the object passed in "data". This option is available to "Administrator" users only.
+Request Body schema: application/json
+userId	
+string
+
+Submission owner (can be updated by "Administrator" users only)
+data	
+object
+
+Raw input data
+dataFilter	
+object (DataFilter)
+
+Filter condition against submission "data" field. Value must be a MongoDB query condition (see Examples, below).
+
+NOTE: MongoDB selectors that can be nested inside queries (such as Comparison and Element Selectors, e.g. $eq, $in, $exists) are supported. The following Logical Selectors are also supported: $and, $or, $nor
+
+Examples:
+
+    dataFilter: {"age": 30}
+
+    dataFilter: {"age": {"$gt": 30}, "people.1.gender": "male"}
+        Will match submission where age > 30 and gender for the 2nd people element equals "male"
+
+incrementData	
+object
+
+Object containing data keys that should be incremented, and by what number (e.g. {"incrementData":{"key1":1,"key2":10}})
+unsetData	
+object
+
+Object containing data keys that should be deleted (e.g. {"unsetData":{"key1":"","key2":""}})
+metadata	
+object (MetadataRequest)
+
+Object containing key-value pairs. To set nested values, this must be an object like {"statuses.complete": "yes", "statuses.processed": "no"}, which is MongoDB dot notation.
+metadataFilter	
+object (MetadataFilter)
+
+Filter condition against submission "metadata" field. Value must be a MongoDB query condition (see Examples, below). MongoDB dot notation is supported for keys.
+
+NOTE: MongoDB selectors that can be nested inside queries (such as Comparison and Element Selectors, e.g. $eq, $in, $exists) are supported. The following Logical Selectors are also supported: $and, $or, $nor
+
+Examples:
+
+    metadataFilter: {"checkpoints.complete": 1234}
+
+    metadataFilter: {"checkpoints.complete": {"$exists": true}, "checkpoints.processed": {"$exists": false}}
+        Will return submissions where both metadata.checkpoints.complete exists AND metadata.checkpoints.processed does not exist
+
+unsetMetadata	
+object
+
+Object containing metadata keys that should be deleted (e.g. {"unsetMetadata":{"key.one":"","key.two":""}})
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "userId": "string",
+    "data": { },
+    "dataFilter": { },
+    "incrementData": { },
+    "unsetData": { },
+    "metadata": { },
+    "metadataFilter": { },
+    "unsetMetadata": { }
+
+}
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "id": "string",
+    "userId": "string",
+    "moduleId": "string",
+    "created": "2019-08-24T14:15:22Z",
+    "modified": "2019-08-24T14:15:22Z",
+    "deleted": "2019-08-24T14:15:22Z",
+    "data": 
+
+{
+
+    "rawData": { }
+
+},
+"metadata": { },
+"validationErrors": 
+[
+
+        {}
+    ]
+
+}
+Delete Module Submission
+
+Deletes a single module submission based on the ID supplied. Note that module submissions are soft-deleted (marked deleted, but not removed).
+path Parameters
+moduleId
+required
+	
+string
+
+Unique module ID
+submissionId
+required
+	
+string
+
+ID of module submission to delete
+query Parameters
+destroy	
+boolean
+Default: false
+
+Whether to hard delete the submission from database. Value of 'destroy=true' will delete the submission. This option requires administrator privileges. Once deleted, the submission cannot be retrieved back.
+Responses
+Response samples
+
+    default
+
+Content type
+application/json
+{
+
+    "code": 400,
+    "message": "string"
+
+}
+Restore a Deleted Module Submission
+
+Restore a soft-deleted submission.
+path Parameters
+moduleId
+required
+	
+string
+
+Unique module ID
+submissionId
+required
+	
+string
+
+ID of module submission to restore
+Responses
+Response samples
+
+    default
+
+Content type
+application/json
+{
+
+    "code": 400,
+    "message": "string"
+
+}
+Restore a Deleted Workflow Submission
+
+Restore a soft-deleted submission.
+path Parameters
+workflowId
+required
+	
+string
+
+Unique workflow ID
+submissionId
+required
+	
+string
+
+ID of workflow submission to restore
+Responses
+Response samples
+
+    default
+
+Content type
+application/json
+{
+
+    "code": 400,
+    "message": "string"
+
+}
+Get Submissions Across Modules and Workflows
+
+Returns submission objects across all modules and workflows. This is a paged endpoint (see Paging). This endpoint is available to "Administrator" users only.
+query Parameters
+limit	
+integer <int32> <= 50
+Default: 50
+
+Maximum number of results to return (default 50, maximum 50)
+offset	
+integer <int32>
+Default: 0
+
+Number of results to skip before selecting results. Offset is zero based.
+sortBy	
+string
+
+Field to sort by (currently supported - created, modified)
+sortOrder	
+integer
+Default: 1
+Enum: 1 -1
+
+Order of sort, if sortBy is specified. One of [1 (ascending),-1 (descending)]
+includeDeleted	
+boolean
+Default: false
+
+Include deleted objects in response (default false). Expected values - true/false
+metadataFilter	
+string
+
+Filter condition against submission "metadata" field. Value must be a stringified MongoDB query condition (see Examples, below). MongoDB dot notation is supported for keys.
+
+NOTE: MongoDB selectors that can be nested inside queries (such as Comparison and Element Selectors, e.g. $eq, $in, $exists) are supported. The following Logical Selectors are also supported: $and, $or, $nor
+
+Examples:
+
+    metadataFilter: {"checkpoints.complete": 1234}
+
+    metadataFilter: {"checkpoints.complete": {"$exists": true}, "checkpoints.processed": {"$exists": false}}
+        Will return submissions where both metadata.checkpoints.complete exists AND metadata.checkpoints.processed does not exist
+
+dataFields	
+string
+
+Comma-separated list of dot-notation data fields to retrieve; for example, &dataFields=field1,also.field2 will retrieve {"data":{"field1":"v1","also":{"field2":"v2"}}}. Do not include "data" in front of each field. All other submission fields will always be retrieved.
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+[
+
+{
+
+    "id": "string",
+    "userId": "string",
+    "moduleId": "string",
+    "created": "2019-08-24T14:15:22Z",
+    "modified": "2019-08-24T14:15:22Z",
+    "deleted": "2019-08-24T14:15:22Z",
+    "data": 
+
+{},
+"metadata": { },
+"validationErrors": 
+
+        []
+    }
+
+]
+Get Merged Submissions
+
+Submission super access is required. This endpoint returns the merged submission object across provided submission ids. The submissions are merged in the order specified by sortOrder and sortBy. If not specified, the submission objects are applied from left to right. Subsequent submission overwrite property assignment of previous sources.
+path Parameters
+submissionIds
+required
+	
+string
+
+A comma separated list of submission ids to merge.
+query Parameters
+conflictCheckFields	
+string
+
+A comma separated list of fields to report conflicts on.
+reportConflicts	
+string
+
+If reportConflicts is specified, an array called 'conflicts' will be appended at the top level of the object.
+sortBy	
+string
+
+A comma separated list of fields to sort by.
+sortOrder	
+string
+Default: "asc"
+Enum: "asc" "desc"
+
+A comma separated list of sort orders. If sortOrder is unspecified, all values are sorted in ascending order. Otherwise, specify an order of "desc" for descending or "asc" for ascending sort order of corresponding values.
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "id": "string",
+    "owner": "string",
+    "form": "string",
+    "created": "2019-08-24T14:15:22Z",
+    "modified": "2019-08-24T14:15:22Z",
+    "deleted": "2019-08-24T14:15:22Z",
+    "isRevision": true,
+    "formArchive": "string",
+    "data": 
+
+{
+
+    "format": "json",
+    "jsonData": { },
+    "xmlData": "string",
+    "pdfUrl": "string",
+    "pdfData": "string",
+    "rawData": { }
+
+},
+"conflicts": 
+[
+
+    []
+
+],
+"validationErrors": 
+[
+
+        {}
+    ]
+
+}
+Get Workflow Submissions
+
+Returns workflow submission objects for a given workflow. This is a paged endpoint (see Paging). Workflow submission data is transformed and returned in a specific format, based on the specified transform. JSON submission data is returned as an object, XML data is returned as a string, and PDF data is returned as a Cloud Storage Delivery URL to the rendered PDF (and optionally base 64 data).
+path Parameters
+workflowId
+required
+	
+string
+
+Unique workflow ID
+query Parameters
+transformName	
+string
+
+Transform to apply to form for output. Transform must be configured and designated for for output. Available transforms may be listed via the /transforms endpoint
+limit	
+integer <int32> <= 50
+Default: 50
+
+Maximum number of results to return (default 50, maximum 50)
+offset	
+integer <int32>
+Default: 0
+
+Number of results to skip before selecting results. Offset is zero based.
+sortBy	
+string
+
+Field to sort by (currently supported - created, modified)
+sortOrder	
+integer
+Default: 1
+Enum: 1 -1
+
+Order of sort, if sortBy is specified. One of [1 (ascending),-1 (descending)]
+includeDeleted	
+boolean
+Default: false
+
+Include deleted objects in response (default false). Expected values - true/false
+metadataFilter	
+string
+
+Filter condition against submission "metadata" field. Value must be a stringified MongoDB query condition (see Examples, below). MongoDB dot notation is supported for keys.
+
+NOTE: MongoDB selectors that can be nested inside queries (such as Comparison and Element Selectors, e.g. $eq, $in, $exists) are supported. The following Logical Selectors are also supported: $and, $or, $nor
+
+Examples:
+
+    metadataFilter: {"checkpoints.complete": 1234}
+
+    metadataFilter: {"checkpoints.complete": {"$exists": true}, "checkpoints.processed": {"$exists": false}}
+        Will return submissions where both metadata.checkpoints.complete exists AND metadata.checkpoints.processed does not exist
+
+includeRaw	
+boolean
+
+Whether to include the untransformed raw submission data in addition to the transformed data. Raw submission data may contain Cloud Storage Delivery URLs.
+includeBase64	
+boolean
+
+Whether to include base64 PDF data in addition to the PDF url (for "njk-pdf" transforms)
+resolveCloudStorageUrls	
+boolean
+
+When transformName is specified, Cloud Storage URLs are already resolved to the original base64 value. When this flag is specified, resolve Cloud Storage URLs to base64 data inside "rawData", as well.
+dataFields	
+string
+
+Comma-separated list of dot-notation data fields to retrieve; for example, &dataFields=field1,also.field2 will retrieve {"data":{"field1":"v1","also":{"field2":"v2"}}}. Do not include "data" in front of each field. All other submission fields will always be retrieved.
+filter	
+string
+
+Filter conditions against submissions. Currently supported filter conditions are userId, created, and modified. The filters should be ; separated, as shown below. NOTE: When filtering on created and modified, all timestamps are in UTC.
+
+Examples:
+
+    filter=userId=john@doe.com will fetch all submissions owned by "john@doe.com"
+    filter=userId=john@doe.com;created>2019-06-11T21:50:57.067Z will fetch all submissions owned by "john@doe.com" and created after "2019-06-11T21:50:57.067Z" (UTC)
+    filter=modified=2019-06-11T21:50:57.067Z will fetch submissions modified at exactly "2019-06-11T21:50:57.067Z" (UTC)
+    filter=created>2019-06-11T00:00:00.000Z;created<2019-06-20T00:00:00.000Z will fetch submissions created between "2019-06-11T00:00:00.000Z" (UTC) and "2019-06-20T00:00:00.000Z" (UTC)
+
+Supported operators (as specified in this library api-query-params):
+
+    key=val type=public
+    key>val count>5
+    key>=val rating>=9.5
+    key<val createdAt<2016-01-01
+    key<=val score<=-5
+    key!=val status!=success
+    key=val1,val2 country=GB,US
+    key!=val1,val2 lang!=fr,en
+    key phone
+    !key !email
+    key=/value/ email=/@gmail\.com$/i
+    key!=/value/ phone!=/^06/
+
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+[
+
+{
+
+    "id": "string",
+    "userId": "string",
+    "moduleId": "string",
+    "created": "2019-08-24T14:15:22Z",
+    "modified": "2019-08-24T14:15:22Z",
+    "deleted": "2019-08-24T14:15:22Z",
+    "data": 
+
+{},
+"metadata": { },
+"validationErrors": 
+
+        []
+    }
+
+]
+Deletes Multiple Workflow Submissions
+
+Deletes multiple workflow submissions based on the ID(s) supplied. Note that workflow submissions are soft-deleted (marked deleted, but not removed). Default Max Limit per request is 50
+path Parameters
+workflowId
+required
+	
+string
+
+Unique workflow ID
+query Parameters
+destroy	
+boolean
+Default: false
+
+Whether to hard delete the submission(s) from database. Value of 'destroy=true' will delete the submission(s). This option requires administrator privileges. Once deleted, the submission(s) cannot be retrieved.
+ids
+required
+	
+string
+
+A comma separated list of the ID(s) to be deleted. Note - Max limit is 50 Per Request Example - ?ids=id1,id2,id3....
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+[
+
+    {
+        "id": "string",
+        "status": 0,
+        "message": "string"
+    }
+
+]
+Get Workflow Submission
+
+Gets a single workflow submission. Workflow submission data is transformed and returned is a specific format, based on the specified transform. JSON submission data is returned as an object, XML data is returned as a string, and PDF data is returned as a Cloud Storage Delivery URL to the rendered PDF (and optionally base 64 data).
+path Parameters
+workflowId
+required
+	
+string
+
+Unique workflow ID
+submissionId
+required
+	
+string
+
+ID of workflow submission to retrieve
+query Parameters
+transformName	
+string
+
+Transform to apply to workflow for output. Transform must be configured and designated for for output. Available transforms may be listed via the /transforms endpoint
+includeRaw	
+boolean
+
+Whether to include the untransformed raw submission data in addition to the transformed data. Raw submission data may contain Cloud Storage Delivery URLs.
+includeBase64	
+boolean
+
+Whether to include base64 PDF data in addition to the PDF url (for "njk-pdf" transforms)
+resolveCloudStorageUrls	
+boolean
+
+When transformName is specified, Cloud Storage URLs are already resolved to the original base64 value. When this flag is specified, resolve Cloud Storage URLs to base64 data inside "rawData", as well.
+dataFields	
+string
+
+Comma-separated list of dot-notation data fields to retrieve; for example, &dataFields=field1,also.field2 will retrieve {"data":{"field1":"v1","also":{"field2":"v2"}}}. Do not include "data" in front of each field. All other submission fields will always be retrieved.
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "id": "string",
+    "userId": "string",
+    "moduleId": "string",
+    "created": "2019-08-24T14:15:22Z",
+    "modified": "2019-08-24T14:15:22Z",
+    "deleted": "2019-08-24T14:15:22Z",
+    "data": 
+
+{
+
+    "format": "json",
+    "jsonData": { },
+    "xmlData": "string",
+    "pdfUrl": "string",
+    "pdfData": "string",
+    "rawData": { }
+
+},
+"metadata": { },
+"validationErrors": 
+[
+
+        {}
+    ]
+
+}
+Delete Workflow Submission
+
+Deletes a single workflow submission based on the ID supplied. Note that workflow submissions are soft-deleted (marked deleted, but not removed).
+path Parameters
+workflowId
+required
+	
+string
+
+Unique workflow ID
+submissionId
+required
+	
+string
+
+ID of workflow submission to delete
+query Parameters
+destroy	
+boolean
+Default: false
+
+Whether to hard delete the submission from database. Value of 'destroy=true' will delete the submission. This option requires administrator privileges. Once deleted, the submission cannot be retrieved back.
+Responses
+Response samples
+
+    default
+
+Content type
+application/json
+{
+
+    "code": 400,
+    "message": "string"
+
+}
+Update Workflow Submission
+
+This endpoint is available to "Administrator" users only. Updates a single workflow submission based on submission ID and, if passed, dataFilter and metadataFilter. This operation supports partial "data" updates, i.e. data that is sent in "data" may include some but not all of the submission data. Update of the owner/user is supported through "userId". Update of current status is supported through "currentStatus". Partial metadata updates are supported without including the entire metadata object. To increment a numeric data key (will also initialize), use "incrementData" To delete a data key, use "unsetData". To delete a metadata key, use "unsetMetadata". Workflow submission data must be provided as a JSON object.
+path Parameters
+workflowId
+required
+	
+string
+
+ID of workflow the submission belongs to
+submissionId
+required
+	
+string
+
+ID of workflow submission to update
+query Parameters
+replaceData	
+boolean
+Default: false
+
+Whether to completely replace the submission data with the object passed in "data".
+Request Body schema: application/json
+userId	
+string
+
+Submission owner
+data	
+object
+
+Raw input data
+dataFilter	
+object (DataFilter)
+
+Filter condition against submission "data" field. Value must be a MongoDB query condition (see Examples, below).
+
+NOTE: MongoDB selectors that can be nested inside queries (such as Comparison and Element Selectors, e.g. $eq, $in, $exists) are supported. The following Logical Selectors are also supported: $and, $or, $nor
+
+Examples:
+
+    dataFilter: {"age": 30}
+
+    dataFilter: {"age": {"$gt": 30}, "people.1.gender": "male"}
+        Will match submission where age > 30 and gender for the 2nd people element equals "male"
+
+incrementData	
+object
+
+Object containing data keys that should be incremented, and by what number (e.g. {"incrementData":{"key1":1,"key2":10}})
+unsetData	
+object
+
+Object containing data keys that should be deleted (e.g. {"unsetData":{"key1":"","key2":""}})
+metadata	
+object (MetadataRequest)
+
+Object containing key-value pairs. To set nested values, this must be an object like {"statuses.complete": "yes", "statuses.processed": "no"}, which is MongoDB dot notation.
+metadataFilter	
+object (MetadataFilter)
+
+Filter condition against submission "metadata" field. Value must be a MongoDB query condition (see Examples, below). MongoDB dot notation is supported for keys.
+
+NOTE: MongoDB selectors that can be nested inside queries (such as Comparison and Element Selectors, e.g. $eq, $in, $exists) are supported. The following Logical Selectors are also supported: $and, $or, $nor
+
+Examples:
+
+    metadataFilter: {"checkpoints.complete": 1234}
+
+    metadataFilter: {"checkpoints.complete": {"$exists": true}, "checkpoints.processed": {"$exists": false}}
+        Will return submissions where both metadata.checkpoints.complete exists AND metadata.checkpoints.processed does not exist
+
+unsetMetadata	
+object
+
+Object containing metadata keys that should be deleted (e.g. {"unsetMetadata":{"key.one":"","key.two":""}})
+currentStatus	
+string
+
+Most recently set status message for the submission
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "userId": "string",
+    "data": { },
+    "dataFilter": { },
+    "incrementData": { },
+    "unsetData": { },
+    "metadata": { },
+    "metadataFilter": { },
+    "unsetMetadata": { },
+    "currentStatus": "string"
+
+}
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "id": "string",
+    "moduleId": "string",
+    "userId": "string",
+    "created": "2019-08-24T14:15:22Z",
+    "modified": "2019-08-24T14:15:22Z",
+    "deleted": "2019-08-24T14:15:22Z",
+    "data": 
+
+{
+
+    "rawData": { }
+
+},
+"metadata": { },
+"validationErrors": 
+[
+
+    {}
+
+],
+"status": 
+{
+
+    "all": 
+
+[],
+"currentStatus": 
+
+        []
+    }
+
+}
+Revisions
+Get Module Submission Revisions
+
+Get all revisions for a submission. The data field is left empty.
+path Parameters
+moduleId
+required
+	
+string
+
+Unique module ID
+submissionId
+required
+	
+string
+
+ID of module submission to retrieve revisions for
+query Parameters
+limit	
+integer <int32> <= 50
+Default: 50
+
+Maximum number of results to return (default 50, maximum 50)
+offset	
+integer <int32>
+Default: 0
+
+Number of results to skip before selecting results. Offset is zero based.
+sortBy	
+string
+
+Field to sort by (currently supported - created, modified)
+sortOrder	
+integer
+Default: 1
+Enum: 1 -1
+
+Order of sort, if sortBy is specified. One of [1 (ascending),-1 (descending)]
+metadataFilter	
+string
+
+Filter condition against submission "metadata" field. Value must be a stringified MongoDB query condition (see Examples, below). MongoDB dot notation is supported for keys.
+
+NOTE: MongoDB selectors that can be nested inside queries (such as Comparison and Element Selectors, e.g. $eq, $in, $exists) are supported. The following Logical Selectors are also supported: $and, $or, $nor
+
+Examples:
+
+    metadataFilter: {"checkpoints.complete": 1234}
+
+    metadataFilter: {"checkpoints.complete": {"$exists": true}, "checkpoints.processed": {"$exists": false}}
+        Will return submissions where both metadata.checkpoints.complete exists AND metadata.checkpoints.processed does not exist
+
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+[
+
+{
+
+    "id": "string",
+    "created": "string",
+    "createdBy": "string",
+    "persistedInWormStorage": true,
+    "submission": 
+
+{},
+"validationErrors": 
+
+        []
+    }
+
+]
+Get Module Submission Revision
+
+Gets a single revision for a submission. Revision data is transformed and returned in a specific format, based on the specified transform. JSON revisions data is returned as an object, XML data is returned as a string, and PDF data is returned as a Cloud Storage Delivery URL to the rendered PDF (and optionally base 64 data).
+path Parameters
+moduleId
+required
+	
+string
+
+Unique module ID
+submissionId
+required
+	
+string
+
+ID of module submission to retrieve revisions for
+revisionId
+required
+	
+string
+
+ID of the particular submission revision to retrieve. To retrieve all submission revisions, do not include this path parameter
+query Parameters
+transformName	
+string
+
+Transform to apply to module for output. Transform must be configured and designated for output. Available transforms may be listed via the /transforms endpoint. Only available for single revisions
+includeRaw	
+boolean
+
+Whether to include the untransformed raw submission data in addition to the transformed data. Raw submission data may contain Cloud Storage Delivery URLs. Only available for single revisions
+includeBase64	
+boolean
+
+Whether to include base64 PDF data in addition to the PDF url (for "njk-pdf" transforms). Only available for single revisions
+resolveCloudStorageUrls	
+boolean
+
+When transformName is specified, Cloud Storage URLs are already resolved to the original base64 value. When this flag is specified, resolve Cloud Storage URLs to base64 data inside "rawData", as well. Only available for single revisions
+dataFields	
+string
+
+Comma-separated list of dot-notation data fields to retrieve; for example, &dataFields=field1,also.field2 will retrieve {"data":{"field1":"v1","also":{"field2":"v2"}}}. Do not include "data" in front of each field. All other submission fields will always be retrieved.
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "id": "string",
+    "created": "string",
+    "createdBy": "string",
+    "persistedInWormStorage": true,
+    "submission": 
+
+{
+
+    "id": "string",
+    "userId": "string",
+    "formId": "string",
+    "created": "2019-08-24T14:15:22Z",
+    "modified": "2019-08-24T14:15:22Z",
+    "deleted": "2019-08-24T14:15:22Z",
+    "metadata": { },
+    "formArchive": "string",
+    "data": 
+
+    {}
+
+},
+"validationErrors": 
+[
+
+        {}
+    ]
+
+}
+Get Workflow Submission Revisions
+
+Gets all revisions for a submission. The data field is left empty.
+path Parameters
+workflowId
+required
+	
+string
+
+Unique workflow ID
+submissionId
+required
+	
+string
+
+ID of workflow submission to retrieve revisions for
+query Parameters
+limit	
+integer <int32> <= 50
+Default: 50
+
+Maximum number of results to return (default 50, maximum 50)
+offset	
+integer <int32>
+Default: 0
+
+Number of results to skip before selecting results. Offset is zero based.
+sortBy	
+string
+
+Field to sort by (currently supported - created, modified)
+sortOrder	
+integer
+Default: 1
+Enum: 1 -1
+
+Order of sort, if sortBy is specified. One of [1 (ascending),-1 (descending)]
+metadataFilter	
+string
+
+Filter condition against submission "metadata" field. Value must be a stringified MongoDB query condition (see Examples, below). MongoDB dot notation is supported for keys.
+
+NOTE: MongoDB selectors that can be nested inside queries (such as Comparison and Element Selectors, e.g. $eq, $in, $exists) are supported. The following Logical Selectors are also supported: $and, $or, $nor
+
+Examples:
+
+    metadataFilter: {"checkpoints.complete": 1234}
+
+    metadataFilter: {"checkpoints.complete": {"$exists": true}, "checkpoints.processed": {"$exists": false}}
+        Will return submissions where both metadata.checkpoints.complete exists AND metadata.checkpoints.processed does not exist
+
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+[
+
+{
+
+    "id": "string",
+    "created": "string",
+    "createdBy": "string",
+    "persistedInWormStorage": true,
+    "submission": 
+
+{},
+"validationErrors": 
+
+        []
+    }
+
+]
+Get Workflow Submission Revision
+
+Gets a single revision for a submission. Revision data is transformed and returned is a specific format, based on the specified transform. JSON revisions data is returned as an object, XML data is returned as a string, and PDF data is returned as a Cloud Storage Delivery URL to the rendered PDF (and optionally base 64 data).
+path Parameters
+workflowId
+required
+	
+string
+
+Unique workflow ID
+submissionId
+required
+	
+string
+
+ID of workflow submission to retrieve revisions for
+revisionId
+required
+	
+string
+
+ID of the particular submission revision to retrieve. To retrieve all submission revisions, do not include this path parameter
+query Parameters
+transformName	
+string
+
+Transform to apply to workflow for output. Transform must be configured and designated for output. Available transforms may be listed via the /transforms endpoint. Only available for single revisions
+includeRaw	
+boolean
+
+Whether to include the untransformed raw submission data in addition to the transformed data. Raw submission data may contain Cloud Storage Delivery URLs. Only available for single revisions
+includeBase64	
+boolean
+
+Whether to include base64 PDF data in addition to the PDF url (for "njk-pdf" transforms). Only available for single revisions
+resolveCloudStorageUrls	
+boolean
+
+When transformName is specified, Cloud Storage URLs are already resolved to the original base64 value. When this flag is specified, resolve Cloud Storage URLs to base64 data inside "rawData", as well. Only available for single revisions
+dataFields	
+string
+
+Comma-separated list of dot-notation data fields to retrieve; for example, &dataFields=field1,also.field2 will retrieve {"data":{"field1":"v1","also":{"field2":"v2"}}}. Do not include "data" in front of each field. All other submission fields will always be retrieved.
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "id": "string",
+    "created": "string",
+    "createdBy": "string",
+    "persistedInWormStorage": true,
+    "submission": 
+
+{
+
+    "id": "string",
+    "userId": "string",
+    "formId": "string",
+    "created": "2019-08-24T14:15:22Z",
+    "modified": "2019-08-24T14:15:22Z",
+    "deleted": "2019-08-24T14:15:22Z",
+    "metadata": { },
+    "formArchive": "string",
+    "data": 
+
+    {}
+
+},
+"validationErrors": 
+[
+
+        {}
+    ]
+
+}
+Workflow
+List of timer start nodes and statuses
+
+Get a list of all timer start nodes and their activity status in a workflow
+path Parameters
+workflowPath
+required
+	
+string
+
+Unique workflow path
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "path": "string",
+    "nodes": 
+
+[
+
+        {}
+    ],
+    "statusCode": 200
+
+}
+List of Timed Events for Submission Id
+
+Get a list of all timed events that have been queued for a submission Id
+path Parameters
+workflowPath
+required
+	
+string
+
+Unique workflow path
+submissionId
+required
+	
+string
+
+ID of workflow submission to retrieve
+query Parameters
+status	
+string
+Enum: "ACTIVE" "CANCELLED" "EXECUTED" "EXECUTION_FAILED" "SLA_TRACKING_ERROR"
+
+Status of timed event action
+actionType	
+string
+Enum: "message" "changePath"
+
+Type of action
+timedEventNode	
+string
+
+Path of timed event node the action is part of
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+[
+
+{
+
+    "startTime": "2019-08-24T14:15:22Z",
+    "endTime": "2019-08-24T14:15:22Z",
+    "executionTime": "2019-08-24T14:15:22Z",
+    "label": "string",
+    "status": "string",
+    "actionType": "string",
+    "duration": 
+
+        {},
+        "timedEventNode": "string",
+        "parentNode": "string",
+        "totalDurationSeconds": 0
+    }
+
+]
+Start a Timer Start Node
+
+Trigger a timer start node to start which will create and execute workflow submissions at the configured frequency
+path Parameters
+workflowPath
+required
+	
+string
+
+Unique workflow path
+timerStartNodePath
+required
+	
+string
+
+Unique path of a timer start node in a workflow
+Responses
+Response samples
+
+    default
+
+Content type
+application/json
+{
+
+    "code": 400,
+    "message": "string"
+
+}
+Stop a Timer Start Node
+
+Trigger a timer start node to stop which will cancel the scheduled creation and execution of workflow submissions
+path Parameters
+workflowPath
+required
+	
+string
+
+Unique workflow path
+timerStartNodePath
+required
+	
+string
+
+Unique path of a timer start node in a workflow
+Responses
+Response samples
+
+    default
+
+Content type
+application/json
+{
+
+    "code": 400,
+    "message": "string"
+
+}
+Run a Timer Start Node Once (Test Run)
+
+Trigger a timer start node to run once (test run) which will create and execute a workflow submission a single time
+path Parameters
+workflowPath
+required
+	
+string
+
+Unique workflow path
+timerStartNodePath
+required
+	
+string
+
+Unique path of a timer start node in a workflow
+Responses
+Response samples
+
+    default
+
+Content type
+application/json
+{
+
+    "code": 400,
+    "message": "string"
+
+}
+Create Workflow Submission
+
+Creates a new workflow submission. Submission ID is auto-generated and returned. Workflow submission data must be provided as a JSON object. The default start node will be used.
+path Parameters
+workflowPath
+required
+	
+string
+
+Unique workflow path
+Request Body schema: application/json
+userId	
+string
+
+Submission owner
+data	
+object
+
+Raw data to include in submission.
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "userId": "string",
+    "data": { }
+
+}
+Response samples
+
+    200default
+
+Content type
+application/json
+[
+
+{
+
+    "submissionId": "string",
+    "submission": 
+
+        {},
+        "statusCode": 0
+    }
+
+]
+Create Workflow Submission from Step
+
+Creates a new workflow submission. Submission ID is auto-generated and returned. Workflow submission data must be provided as a JSON object.
+path Parameters
+workflowPath
+required
+	
+string
+
+Unique workflow path
+stepPath
+required
+	
+string
+
+Unique path of workflow step, usually "start"
+Request Body schema: application/json
+userId	
+string
+
+Submission owner
+data	
+object
+
+Raw data to include in submission.
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "userId": "string",
+    "data": { }
+
+}
+Response samples
+
+    200default
+
+Content type
+application/json
+[
+
+{
+
+    "submissionId": "string",
+    "submission": 
+
+        {},
+        "statusCode": 0
+    }
+
+]
+Resume workflow
+
+Resume a workflow that has encountered a Service Task.
+path Parameters
+workflowPath
+required
+	
+string
+
+Path of the workflow that is being loaded
+resumePathName
+required
+	
+string
+
+Service Task path
+submissionId
+required
+	
+string
+
+ID of submission to use.
+Request Body schema: application/json
+data	
+object
+
+Raw data to include in submission.
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "data": { }
+
+}
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "submissionId": "string",
+    "state": "string",
+    "statusCode": 200,
+    "submission": { }
+
+}
+Handoff submission
+
+Hands off existing submission to specified workflow. This endpoint is available to "Administrator" users only.
+path Parameters
+workflowPath
+required
+	
+string
+
+Path of the workflow to handoff submission
+Request Body schema: application/json
+submissionId
+required
+	
+string
+
+ID of submission to use.
+startNode	
+string
+
+Path of the start node in handoff workflow. Default start node will be used when startNode is not provided.
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "submissionId": "string",
+    "startNode": "string"
+
+}
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "submissionId": "string",
+    "workflowId": "string",
+    "state": "string",
+    "statusCode": 200,
+    "submission": { }
+
+}
+Restore a Deleted Workflow
+
+Restores a soft-deleted workflow
+path Parameters
+workflowId
+required
+	
+string
+
+ID of workflow to restore
+Responses
+Response samples
+
+    default
+
+Content type
+application/json
+{
+
+    "code": 400,
+    "message": "string"
+
+}
+Modules
+Get Modules
+
+Returns module objects. This is a paged endpoint (see Paging). This endpoint is available to "Administrator" users only.
+query Parameters
+limit	
+integer <int32> <= 50
+Default: 50
+
+Maximum number of results to return (default 50, maximum 50)
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+[
+
+    {
+        "id": "string",
+        "name": "string",
+        "title": "string",
+        "created": "2019-08-24T14:15:22Z",
+        "modified": "2019-08-24T14:15:22Z"
+    }
+
+]
+Get Module
+
+Returns a module object based on a module ID. This endpoint is available to "Administrator" users only.
+path Parameters
+moduleId
+required
+	
+string
+
+ID of module to retrieve
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "id": "string",
+    "name": "string",
+    "title": "string",
+    "created": "2019-08-24T14:15:22Z",
+    "modified": "2019-08-24T14:15:22Z"
+
+}
+Restore a Deleted Module
+
+Restores a soft-deleted module.
+path Parameters
+moduleId
+required
+	
+string
+
+ID of module to restore
+Request Body schema: application/json
+
+NOTE: Any of the options below will override existing relationships the module had at the time of deletion.
+shareToEnvironment	
+boolean
+
+Share the module to the environment
+
+NOTE: If specified, cannot include workspaceId or applicationId.
+workspaceId	
+string
+
+Share the module to a workspace
+
+Examples
+
+Restore and share to workspace ID: 6053e968afcc293120198785
+
+Request
+
+   {
+     "workspaceId": "6053e968afcc293120198785",
+   }
+
+NOTE: If applicationId also specified, will connect the module to the application (the application must be part of the workspace)
+
+Restore and connect to application 6078e938d87660707f31c624 in workspace 6053e968afcc293120198785
+
+Request
+
+  {
+    "workspaceId": "6053e968afcc293120198785",
+    "applicationId": "6078e938d87660707f31c624"
+  }
+
+applicationId	
+string
+
+Restore the module to an application (will not share the module)
+
+Example
+
+Request
+
+  {
+    "applicationId": "6078e938d87660707f31c624"
+  }
+
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "shareToEnvironment": true,
+    "workspaceId": "string",
+    "applicationId": "string"
+
+}
+Response samples
+
+    default
+
+Content type
+application/json
+{
+
+    "code": 400,
+    "message": "string"
+
+}
+Execute Module
+
+Execute module rules/validations configured in specified module with specified submission data, optionally save data. The response will include the saved submission data that would be available in the specified module.
+path Parameters
+moduleId
+required
+	
+string
+
+ID of module to use to execute submission
+Request Body schema: application/json
+submissionId	
+string
+
+ID of module submission to use. If submissionId is unspecified and save is specified, a new submission will be created with moduleId as the module being executed and userId as the user making the request.
+data	
+object
+
+Raw data to include in submission data when executing (and saving, if specified).
+metadata	
+object (MetadataRequest)
+
+Object containing key-value pairs. To set nested values, this must be an object like {"statuses.complete": "yes", "statuses.processed": "no"}, which is MongoDB dot notation.
+validate	
+boolean
+
+Whether or not to validate submission data post-execution. Defaults to false.
+save	
+boolean
+
+Whether to save data for the existing submission (or create a new submission) after execution. Defaults to false. Data will never be saved when an execution error is encountered.
+saveOnValidationError	
+boolean
+
+If set to true (and both save and validate are also set to true), will save and send back a 2xx response, even if validation errors occurred. Defaults to false.
+hydrateDataInitially	
+boolean
+
+If set to true, will fully populate data object before module begins execution. Defaults to false.
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "submissionId": "string",
+    "data": { },
+    "metadata": { },
+    "validate": true,
+    "save": true,
+    "saveOnValidationError": true,
+    "hydrateDataInitially": true
+
+}
+Response samples
+
+    2004122XX4XX5XXdefault
+
+Content type
+application/json
+{
+
+    "id": "string",
+    "userId": "string",
+    "moduleId": "string",
+    "created": "2019-08-24T14:15:22Z",
+    "modified": "2019-08-24T14:15:22Z",
+    "deleted": "2019-08-24T14:15:22Z",
+    "data": 
+
+{
+
+    "rawData": { },
+    "resolved": { }
+
+},
+"metadata": { },
+"validationErrors": 
+[
+
+    {}
+
+],
+"invalidNavigationPanels": 
+[
+
+        {}
+    ]
+
+}
+Execute via Proxy - GET
+
+API request layer for Server Side Execute to allow HTTPS calls to Execute a Module. The path and query string are flexible.
+path Parameters
+moduleId
+required
+	
+string
+
+The module specified by moduleId must meet the following requirements -
+
+    It MUST be marked as Server-side Execute Only
+    It MAY be marked as anonymous
+    It MAY reference a submission data getter for object key _request
+
+Responses
+Response samples
+
+    2004122XX4XX5XXdefault
+
+Content type
+application/json
+{
+
+    "id": "string",
+    "userId": "string",
+    "moduleId": "string",
+    "created": "2019-08-24T14:15:22Z",
+    "modified": "2019-08-24T14:15:22Z",
+    "deleted": "2019-08-24T14:15:22Z",
+    "data": 
+
+{
+
+    "rawData": { },
+    "resolved": { }
+
+},
+"metadata": { },
+"validationErrors": 
+[
+
+    {}
+
+],
+"invalidNavigationPanels": 
+[
+
+        {}
+    ]
+
+}
+Execute via Proxy - POST
+
+API request layer for Server Side Execute to allow HTTPS calls to Execute a Module. The request format is flexible and may include files, text, xml or JSON Object. The path and query string are also flexible.
+path Parameters
+moduleId
+required
+	
+string
+
+The module specified by moduleId must meet the following requirements -
+
+    It MUST be marked as Server-side Execute Only
+    It MAY be marked as anonymous
+    It MAY reference a submission data getter for object key _request
+
+Responses
+Response samples
+
+    2004122XX4XX5XXdefault
+
+Content type
+application/json
+{
+
+    "id": "string",
+    "userId": "string",
+    "moduleId": "string",
+    "created": "2019-08-24T14:15:22Z",
+    "modified": "2019-08-24T14:15:22Z",
+    "deleted": "2019-08-24T14:15:22Z",
+    "data": 
+
+{
+
+    "rawData": { },
+    "resolved": { }
+
+},
+"metadata": { },
+"validationErrors": 
+[
+
+    {}
+
+],
+"invalidNavigationPanels": 
+[
+
+        {}
+    ]
+
+}
+Execute via Proxy - PUT
+
+API request layer for Server Side Execute to allow HTTPS calls to Execute a Module. The request format is flexible and may include files, text, xml or JSON Object. The path and query string are also flexible.
+path Parameters
+moduleId
+required
+	
+string
+
+The module specified by moduleId must meet the following requirements -
+
+    It MUST be marked as Server-side Execute Only
+    It MAY be marked as anonymous
+    It MAY reference a submission data getter for object key _request
+
+Responses
+Response samples
+
+    2004122XX4XX5XXdefault
+
+Content type
+application/json
+{
+
+    "id": "string",
+    "userId": "string",
+    "moduleId": "string",
+    "created": "2019-08-24T14:15:22Z",
+    "modified": "2019-08-24T14:15:22Z",
+    "deleted": "2019-08-24T14:15:22Z",
+    "data": 
+
+{
+
+    "rawData": { },
+    "resolved": { }
+
+},
+"metadata": { },
+"validationErrors": 
+[
+
+    {}
+
+],
+"invalidNavigationPanels": 
+[
+
+        {}
+    ]
+
+}
+Execute via Proxy - PATCH
+
+API request layer for Server Side Execute to allow HTTPS calls to Execute a Module. The request format is flexible and may include files, text, xml or JSON Object. The path and query string are also flexible.
+path Parameters
+moduleId
+required
+	
+string
+
+The module specified by moduleId must meet the following requirements -
+
+    It MUST be marked as Server-side Execute Only
+    It MAY be marked as anonymous
+    It MAY reference a submission data getter for object key _request
+
+Responses
+Response samples
+
+    2004122XX4XX5XXdefault
+
+Content type
+application/json
+{
+
+    "id": "string",
+    "userId": "string",
+    "moduleId": "string",
+    "created": "2019-08-24T14:15:22Z",
+    "modified": "2019-08-24T14:15:22Z",
+    "deleted": "2019-08-24T14:15:22Z",
+    "data": 
+
+{
+
+    "rawData": { },
+    "resolved": { }
+
+},
+"metadata": { },
+"validationErrors": 
+[
+
+    {}
+
+],
+"invalidNavigationPanels": 
+[
+
+        {}
+    ]
+
+}
+Execute via Proxy - DELETE
+
+API request layer for Server Side Execute to allow HTTPS calls to Execute a Module. The path and query string are flexible.
+path Parameters
+moduleId
+required
+	
+string
+
+The module specified by moduleId must meet the following requirements -
+
+    It MUST be marked as Server-side Execute Only
+    It MAY be marked as anonymous
+    It MAY reference a submission data getter for object key _request
+
+Responses
+Response samples
+
+    2004122XX4XX5XXdefault
+
+Content type
+application/json
+{
+
+    "id": "string",
+    "userId": "string",
+    "moduleId": "string",
+    "created": "2019-08-24T14:15:22Z",
+    "modified": "2019-08-24T14:15:22Z",
+    "deleted": "2019-08-24T14:15:22Z",
+    "data": 
+
+{
+
+    "rawData": { },
+    "resolved": { }
+
+},
+"metadata": { },
+"validationErrors": 
+[
+
+    {}
+
+],
+"invalidNavigationPanels": 
+[
+
+        {}
+    ]
+
+}
+Data Collections
+Get Module Accessible Data Collections
+
+Returns an array of objects containing the data collections name
+path Parameters
+moduleId
+required
+	
+string
+
+ID of module to retrieve
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+[
+
+    {
+        "iname": "string"
+    }
+
+]
+Update Data Collection via Import
+
+Update an existing data collection via uploading an attached csv file. The CSV file generation endpoint returns a valid file object that can be imported.
+path Parameters
+collection
+required
+	
+string
+
+name of the data collection
+Request Body schema: multipart/form-data
+file
+required
+	
+string <binary>
+
+file to import
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "success": true
+
+}
+Global Variables
+Get Global Variables
+
+Returns Global Variables objects. This endpoint is available to "Administrator" users only.
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+[
+
+    {
+        "id": "string",
+        "key": "string",
+        "value": "string",
+        "description": "string",
+        "serverSideOnly": true,
+        "created": "2019-08-24T14:15:22Z",
+        "createdBy": "string",
+        "modified": "2019-08-24T14:15:22Z",
+        "modifiedBy": "string",
+        "deleted": "2019-08-24T14:15:22Z"
+    }
+
+]
+Create Global Variables
+
+Creates a new Global Variable. 'key' needs to be unique. This endpoint is available to "Administrator" users only.
+Request Body schema: application/json
+key
+required
+	
+string
+
+name of the key of the global variable
+value	
+string
+
+value of the key of the global variable
+description	
+string
+
+description for the global variable
+serverSideOnly	
+boolean
+
+indicate if global variable is available server side only
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "key": "string",
+    "value": "string",
+    "description": "string",
+    "serverSideOnly": true
+
+}
+Response samples
+
+    201default
+
+Content type
+application/json
+{
+
+    "id": "string",
+    "key": "string",
+    "value": "string",
+    "description": "string",
+    "serverSideOnly": true,
+    "created": "2019-08-24T14:15:22Z",
+    "createdBy": "string",
+    "modified": "2019-08-24T14:15:22Z",
+    "modifiedBy": "string",
+    "deleted": "2019-08-24T14:15:22Z"
+
+}
+Get Global Variable
+
+Returns a global variable object based on a global variable Id. This endpoint is available to "Administrator" users only.
+path Parameters
+globalVariableId
+required
+	
+string
+
+Id of global variable to retrieve
+Responses
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "id": "string",
+    "key": "string",
+    "value": "string",
+    "description": "string",
+    "serverSideOnly": true,
+    "created": "2019-08-24T14:15:22Z",
+    "createdBy": "string",
+    "modified": "2019-08-24T14:15:22Z",
+    "modifiedBy": "string",
+    "deleted": "2019-08-24T14:15:22Z"
+
+}
+Update Global Variable
+
+Updates a single global variable. 'key' needs to be unique. Partial updates are supported. This endpoint is available to "Administrator" users only.
+path Parameters
+globalVariableId
+required
+	
+string
+
+Id of global variable to update
+Request Body schema: application/json
+key	
+string
+
+name of the key of the global variable
+value	
+string
+
+value of the key of the global variable
+description	
+string
+
+description for the global variable
+serverSideOnly	
+boolean
+
+indicate if global variable is available server side only
+Responses
+Request samples
+
+    Payload
+
+Content type
+application/json
+{
+
+    "key": "string",
+    "value": "string",
+    "description": "string",
+    "serverSideOnly": true
+
+}
+Response samples
+
+    200default
+
+Content type
+application/json
+{
+
+    "id": "string",
+    "key": "string",
+    "value": "string",
+    "description": "string",
+    "serverSideOnly": true,
+    "created": "2019-08-24T14:15:22Z",
+    "createdBy": "string",
+    "modified": "2019-08-24T14:15:22Z",
+    "modifiedBy": "string",
+    "deleted": "2019-08-24T14:15:22Z"
+
+}
+Delete Global Variable
+
+Soft deletes a single global variable. This endpoint is available to "Administrator" users only.
+path Parameters
+globalVariableId
+required
+	
+string
+
+Id of global variable to delete
+Responses
