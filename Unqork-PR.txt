@@ -1,0 +1,1101 @@
+
+Unqork’s Codeless as a Service Platform Now Available on the Microsoft Azure Marketplace
+
+NEW YORK – May 23, 2023 – Unqork, the leading Codeless as a Service platform, today announced the availability of the Unqork platform on the Microsoft Azure Marketplace, which offers IT software applications and services built by industry-leading technology companies, optimized to run on Azure. Unqork enables customers to democratize technology and free themselves from the pitfalls of legacy code, unlocking innovation and speed to market with enterprise-grade performance, scale, and security. Through the listing on the Azure Marketplace, customers can easily access Unqork’s Codeless as a Service platform to build and run mission-critical applications faster and at a lower cost. 
+
+The availability of Unqork on the Azure Marketplace reflects the growing demand for codeless architecture which gives enterprises faster time-to-market and frees them from resource-intensive legacy code maintenance. Via the Azure Marketplace, customers can leverage the Unqork platform for every aspect of application development: front-end UX, workflow, rules engine, analytics, integrations and maintenance. Unqork was designed for highly-regulated industries like financial services, insurance, healthcare and the public sector, with enterprise-grade security and compliance measures built into the platform. 
+
+“Unqork’s Codeless as a Service platform relieves enterprises from technology legacy, providing speed and flexibility for a better way to build, deploy and maintain software at scale,” said Sean Dougherty, Head of Alliances & Ecosystem, Unqork. “We’re honored by Microsoft’s decision to list Unqork on the Azure Marketplace, and look forward to unlocking even more opportunities and efficiencies for our joint customers.”
+
+To learn more about Unqork on the Azure Marketplace, visit here. 
+
+ 
+
+About Unqork
+
+Unqork is the leading Codeless as a Service platform that helps leading organizations build, deploy and manage complex software without having to think about code. Unqork created the codeless architecture standard – the future of software development that frees the world’s largest enterprises from the pitfalls of legacy code and allows them to focus on innovation to drive business and maintain a competitive edge. More than one third of Unqork’s corporate customers are in the Fortune 500, with a customer roster that includes Goldman Sachs, Marsh, Maimonides Medical Center and the U.S. Department of Health and Human Services. To learn more, please visit: https://www.unqork.com. 
+
+ Media Contact
+
+Wynn Mitchell
+
+comms@unqork.com
+
+
+Unqork Releases Spring 2023 Platform Update to Supercharge the Development Process With Enhancements Targeting Collaboration, Performance, and Security
+
+The newest platform update supports a business-led IT approach to application development with features that optimize security and performance
+
+New York City, New York - May 2, 2023 - Unqork, the leading Codeless as a Service platform, today announced its Spring 2023 Platform Update, its first extensive new set of platform features of 2023. Unqork enables customers to democratize technology and free themselves from the pitfalls of legacy code, unlocking innovation and speed to market with enterprise-grade performance, scale, and security. The new features broaden the capabilities for customer developer and business teams, fostering cross-team collaboration and peak performance for greater usability than ever before.
+
+Unqork’s Spring 2023 Platform Update features focus on enabling business-led IT for Unqork users, empowering business and IT teams to work together to create transformational applications that both power the business and perform at the enterprise level. Unqork customers are already taking advantage of the new platform features, heralding the benefits like granular access control to application building workspaces that their clients trust, the ability to deploy applications with increased scalability, and tools that save re-configuring time for developers.
+
+Unqork’s Spring 2023 Platform Update includes:
+
+    Dynamic Refresh: Improve the speed and performance of Unqork applications for a more productive development process. Dynamic Refresh provides seamless content delivery by dynamically displaying content based on user selections to simplify application complexity, personalize end-user preferences, and save development time.   
+    Real-Time Configuration Analysis: Build world class applications with best practices in mind by leveraging Real-Time Configuration Analysis for instant intelligent feedback and problem-solving. This new feature runs component tests to analyze potential configuration issues and provides recommendations on how to resolve each, allowing developers to focus on building performant applications instead of resolving errors. 
+    Workspaces Role-Based Access Control: Optimize development collaboration and security by segregating team resources into shared or individual workspaces and controlling who can access or manage each. With secure collaboration and granular control over workspace access, users can mix and match environments and roles to achieve the level of access that’s best for each team.
+    Additional Component Improvements: With additions like Address Search Component, end-users have access to a Google Maps-style address look-up in an application that is secure and user friendly. The Address Search component uses partial and related search terms (i.e. “fuzzy logic”) and auto-populated address data to quickly find the address users are looking for when completing an application.
+
+With Unqork’s codeless architecture, enterprise customers can build and run future-proof software applications with accelerated time to value and increased developer productivity by up to 70% by replacing language – legacy code – with data. These latest features give users the ability to create sophisticated applications with enterprise needs in mind like security, performance, and design. As a result, users have access to fast, accessible and efficient digital solutions. 
+
+“We are thrilled to announce our Spring 2023 Platform Update, with new features that were created with security and performance top-of-mind,” said Thierry Bonfante, Chief Product Officer, Unqork. “These newest features foster more collaboration for our customers, giving their business and technology teams the ability to collaborate closely throughout the software development process for modern applications that fit the needs of their users, with the many added benefits of Unqork’s codeless architecture.” 
+
+To learn more, visit here. 
+
+ 
+
+About Unqork
+
+Unqork is the leading Codeless as a Service platform that helps leading organizations build, deploy and manage complex software without having to think about code. Unqork created the codeless architecture standard – the future of software development that frees the world’s largest enterprises from the pitfalls of legacy code and allows them to focus on innovation to drive business and maintain a competitive edge. More than one third of Unqork’s corporate customers are in the Fortune 500, with a customer roster that includes Goldman Sachs, Marsh, Maimonides Medical Center and the U.S. Department of Health and Human Services. To learn more, please visit: https://www.unqork.com. 
+
+Media Contact
+
+Wynn Mitchell
+
+comms@unqork.com
+
+
+Unqork For Government Achieves FedRAMP® Authorization
+
+New York City, New York -  April 24, 2023 - Unqork, the leading Codeless as a Service platform, today announced that it has achieved Authorization to Operate (ATO) on the Federal Risk and Authorization Management Program (FedRAMP®) Marketplace. Unqork enables customers, now including the Federal Government, to democratize technology and free themselves from the pitfalls of legacy code, unlocking innovation and speed to market with enterprise grade performance, scale, and security. The Department of Health and Human Services is the first federal agency to use Unqork for Government from the FedRAMP Marketplace to digitize payroll processing within the agency’s Office of the Assistant Secretary for Health (OASH). 
+
+Unqork is a new way for governments and enterprises to build and run applications ten times faster and 65% cheaper by replacing language – legacy code – with data. Through a universal data definition, Unqork’s codeless engine powers beautiful front ends, scalable APIs, secure and performant back-ends, and everything in-between for the most stringent requirements of the Federal government. Unqork’s customers include the largest regulated industries including banks, asset managers, insurance companies, state and local agencies, and healthcare providers.  
+
+“We’re thrilled to have achieved FedRAMP authorization so quickly in the five short years since Unqork was founded – a major testament to the security standards of the Unqork platform,” said Gary Hoberman, Founder and CEO, Unqork. “Now that Unqork’s codeless platform has received authorization on the FedRAMP marketplace, federal agencies have access to digital solutions that fuel their modernization efforts. We are excited to bring our codeless technology to the Federal agencies and team with them to unlock innovation and migrate legacy systems to the cloud  ”
+
+To learn more about Unqork’s work in the public sector, see here.
+
+ 
+
+About Unqork
+
+Unqork is the leading Codeless as a Service platform that helps leading organizations build, deploy and manage complex software without having to think about code. Unqork created the codeless architecture standard – the future of software development that frees the world’s largest enterprises from the pitfalls of legacy code and allows them to focus on innovation to drive business and maintain a competitive edge. More than one third of Unqork’s corporate customers are in the Fortune 500, with a customer roster that includes Goldman Sachs, Marsh, Maimonides Medical Center and the U.S. Department of Health and Human Services. To learn more, please visit: https://www.unqork.com. 
+
+Media Contact
+
+Wynn Mitchell
+
+comms@unqork.com
+
+
+Unqork and Rhino.ai Launch Migration Factory for Low-Code, Legacy Players to Move to Codeless Architecture
+
+Powered by Rhino.ai, customers will be able to accelerate the migration of any application to Unqork’s Codeless as a Service platform for future-proof technology without any legacy code
+
+NEW YORK – March 29, 2023 – Unqork, the leading Codeless as a Service platform, today announced its partnership with Rhino.ai, to launch its new Migration Factory solution. Rhino.ai's patented AI-driven software streamlines software migration by automatically extracting and converting workflows, schemas, data, APIs, and roles from legacy environments and platforms, seamlessly integrating them into modern PaaS platforms. With the new Migration Factory, customers will be able to easily migrate their low-code and legacy applications to Unqork’s Codeless as a Service platform, allowing them to continue using their existing applications with the benefits of codeless. 
+
+Unqork’s Codeless as a Service platform allows enterprises to build and run applications up to ten times faster by replacing subjective language – legacy code – with objective data. As a result, Unqork is the first data-defined software that relieves enterprises from technology legacy, providing unrivaled upgradability and security for technology, and speed and flexibility for business. With Unqork’s Codeless as a Service, enterprises deploy complex, mission-critical applications that reduce the time and cost of legacy maintenance, reducing development costs and increasing developer productivity.
+
+Migrating from legacy technology at scale is a resource intensive endeavor. As a solution, the Migration Factory offering from Rhino.ai enables clients to accelerate these migrations, while diverting resources to impactful modernization programs and new product builds. The Migration Factory will enable enterprises to quickly and easily migrate their legacy applications – whether they are built with low-code platforms or traditional coding languages – so enterprises can move their technology stack to a more modern, future-proof application architecture with the added benefits of Unqork’s codeless platform. 
+
+This is the first time ever that organizations will be able to migrate their enterprise applications to a codeless architecture.
+
+“As a former CIO, I experienced firsthand the many challenges leaders face today to maintain legacy code, with 80% of my budget spent just to maintain languages that were on their way to extinction,” said Gary Hoberman, Founder and CEO, Unqork. “We’re thrilled to partner with Rhino.ai as we take steps closer to a future that is free from legacy for applications that are future-proof and compatible with any technology so customers can spend time creating innovative projects and advancing their business.” 
+
+“At Rhino.ai, we are dedicated to partnering with game-changing innovators that are pushing the boundaries of what you can do with technology,” said Adam Branch, CEO, Rhino.ai. “Unqork is a major pioneer of no-code technology and we could not be more excited to partner with them as they build towards a future without the many hurdles of low-code and legacy software.”
+
+ 
+
+About Unqork
+
+Unqork is the leading Codeless as a Service platform that helps leading organizations build, deploy and manage complex software without having to think about code. Unqork created the codeless architecture standard – the future of software development that frees the world’s largest enterprises from the pitfalls of legacy code and allows them to focus on innovation to drive business and maintain a competitive edge. More than one third of Unqork’s corporate customers are in the Fortune 500, with a customer roster that includes Goldman Sachs, Marsh, Maimonides Medical Center and the U.S. Department of Health and Human Services. To learn more, please visit: https://www.unqork.com. 
+
+Media Contact
+
+Wynn Mitchell
+
+comms@unqork.com
+
+
+
+Unqork Announces the 2022 Winners of the Unqork Create Awards
+
+For the second year, the Unqork Create Awards honor innovators of the year who created game-changing applications that showcase the power of codeless
+
+NEW YORK – November 14, 2022 – Unqork, the leading Codeless as a Service platform, today announced the winners for its second-annual Unqork Create Awards. The award winners were announced at Unqork Create, the first-ever conference centered on codeless software development. 
+
+The Unqork Create Awards highlight creators and industry thought leaders driving the Unqork codeless platform. Winners for each category were selected for their work spearheading the codeless revolution and pushing the boundaries of codeless innovation. 2022 winners include: 
+
+    Fastest App to Market Award: JPMorgan Chase’s Mortgage Modification application
+    ROI Award: BlackRock’s NAV Solution and Infosys’ First Notice of Loss application
+    Most Innovative App Award: Marsh’s US Placement and Policy Management Services application with EY
+    Application for Good Award: Vanguard’s Capacity and Demand application, KPMG’s ESG Application
+    Operations & EUC Automation Award: Fannie Mae’s EUC COE
+    Transforming Private Markets Award: Goldman Sachs’ Deal Manufacturing Platform
+    Private Markets Digitization Award: Chenoa’s Private Valuation Oversight application
+    Codeless Expert of the Year Award: Sudershan Sharma, State Street and Venkat Rayalla, KPMG
+    Company Community Hub Champion Award: Marsh and Chenoa
+    Academy Company Genius Award: Broadridge and EY 
+
+“The Unqork Create Awards showcase the full power and potential of Unqork’s codeless architecture,” said Gary Hoberman, founder and CEO, Unqork. “This year’s winners are using Unqork to solve the biggest challenges of today, using codeless architecture to create transformative applications and drive innovation across their industries. Congratulations to all of this year’s winners!” 
+
+To learn more, please visit: https://www.unqork.com. 
+
+ 
+
+About Unqork
+
+Unqork is the leading Codeless as a Service platform that helps leading organizations build, deploy and manage complex software without having to think about code. Unqork created the codeless architecture standard – the future of software development that frees the world’s largest enterprises from the pitfalls of legacy code and allows them to focus on innovation to drive business and maintain a competitive edge. More than one third of Unqork’s corporate customers are in the Fortune 500, with a customer roster that includes Goldman Sachs, Marsh, Maimonides Medical Center and the U.S. Department of Health and Human Services. To learn more, please visit: https://www.unqork.com. 
+
+Media Contact
+
+Wynn Mitchell
+
+comms@unqork.com
+
+
+Unqork Unveils Codeless as a Service
+
+Two new releases, Unqork OS and Codeless Data Experiences, will support Codeless as a Service with a focus on extensibility and data functionality
+
+NEW YORK – November 10, 2022 – Unqork, the leader of codeless architecture software development, today announced their vision for the future of software: Codeless as a Service. Codeless as a Service allows enterprise customers to seamlessly build, run and manage next generation software – with a single open data definition. Unqork customers can achieve a secure, multi-cloud codeless architecture for applications that provide usability, extensibility, upgradability, portability, reliability and more. As a result, customers are able to create future-proof software applications that unlock substantial productivity gains with a faster proof of value than traditional coding. 
+
+In support of Codeless as a Service, Unqork unveiled two major investments in the evolution of its codeless platform, Unqork OS and Codeless Data Experiences. Both releases will meet the evolving needs of enterprise customers looking for easier ways to manage software applications, with a focus on integrability and data functionality. 
+
+“As we look to the future of software development, we’re picking up where the serverless movement left off and continuing on the journey of abstraction and empowering enterprises to build, run and manage their applications without having to think about the underlying code,” said Gary Hoberman, CEO and Founder, Unqork. “Codeless as a Service allows customers to create technology with the security, scalability, usability and extensibility that they need, all while simultaneously uniting their business and technology teams, improving developer productivity and reimagining the customer experience.” 
+
+Unqork OS
+
+Unqork OS is the next generation of the codeless platform that empowers customers with the tools to build powerful, performant and secure enterprise software and consumer-grade experiences. Driven to expand the possibilities of what customers can build, Unqork OS will unlock the next evolution of Codeless as a Service development. Core features of Unqork OS will focus on providing robust, powerful capabilities. These include: 
+
+    High-Performance Engine & Rules Orchestration: executes complex business logic for more optimized use cases that require high volumes of user content, business logic and data transactions.  
+    Embedded Unqork: gives creators the ability to embed Unqork applications picture in picture within existing technology ecosystems to deliver a seamless end-user experience. 
+    Self-Service Styling: provides UI tooling that empowers consumer-grade, pixel-perfect, branded digital experiences with design and accessibility in mind. 
+    Extensible Component Architecture: enhances creator personalization and control over their application with decomposed, reusable components that they create themselves. 
+
+Codeless Data Experiences
+In addition to Unqork OS, Unqork introduced its new Codeless Data Experiences, a world class approach to  data-first application development on the Unqork platform. The Codeless Data Experiences include platform features that will enhance data-centric innovations with increased usability so that users can shape, scale, validate and migrate their application data. Features of the Codeless Data Experiences will be incrementally available to Unqork users, with extended features made available over time. These features include: 
+
+    Bring Your Own Schema: supports customers to import their own schema and data models and centralize data management. With Bring Your Own Schema, customers are able to collaborate throughout the SDLC planning phase. 
+    Data Binding: a codeless experience that allows creators to drag-and-drop fields directly from a data model into a UI canvas, with the power to have greater control over how data interacts with the application's UI interface.
+    Data Contracts and Validation: provides quick, easy data modeling onboarding and data validation, with full support to import, export and mutate data operations. 
+    Data Access: natively ensures all queries are efficient and performant for data models. Data Access allows users to optionally build queries with a visual query builder and delivers centralized RBAC at the data model-level for greater permission control access.
+
+Unqork announced these product features at its annual Unqork Create conference, the first-ever conference centered on codeless software development. The conference featured codeless creator sessions, hands-on workshops, training, Unqork experts as well as insights from technology partners and industry luminaries, including leaders from BlackRock, MongoDB, Edward Jones, State Street, Goldman Sachs, JPMorgan, Chubb and more.
+
+To learn more, please visit: https://www.unqork.com. 
+
+ 
+
+About Unqork
+
+Unqork is the leading codeless development platform that helps leading organizations build, deploy and manage complex software without having to think about code. Unqork created the codeless architecture standard – the future of software development that frees the world’s largest enterprises from the pitfalls of legacy code and allows them to focus on innovation to drive business and maintain a competitive edge. More than one third of Unqork’s corporate customers are in the Fortune 500, with a customer roster that includes Goldman Sachs, Marsh, Maimonides Medical Center and the U.S. Department of Health and Human Services. To learn more, please visit: https://www.unqork.com. 
+
+Media Contact
+
+Wynn Mitchell
+
+comms@unqork.com
+
+
+Unqork and Securrency Launch Private Markets Asset Tokenization Solution Powered by Codeless Architecture
+
+The out-of-the-box codeless, white-label marketplace spans the entire digital asset lifecycle for scalable, secure blockchain transactions for private market customers
+
+NEW YORK – November 9, 2022 – Unqork, the leader of codeless architecture software development, today announced that it has entered into a partnership with Securrency, a world-class developer of institutional-grade blockchain-enabled financial and regulatory technology, to create an end-to-end digital asset solution for private market customers. Leveraging Unqork’s enterprise-grade codeless development platform, Securrency’s Capital Markets Platform provides financial institutions and other operators with all of the features needed to launch a digital asset marketplace. The out-of-the box solution can be easily customized and integrated to best fit individual business needs. With the marketplace, customers can: 
+
+    Onboard users easily and verify asset managers, investors, and other transaction participants in real time with fully customizable workflows
+    Design and execute fund documents digitally (e.g., private placement memoranda and subscription  documents)
+    Tokenize and distribute funds with Securrency’s patented Compliance Aware Token® Framework
+    Securely transact via digital wallets on the Stellar Network, Ethereum, and other top-tier blockchain networks for real-time fund subscriptions and redemptions
+
+This marks the first time that codeless technology has been used to build, deploy, and manage an out-of-the-box blockchain-based solution for tokenized private securities and other assets. The powerful combination of Unqork’s codeless integrations and orchestration with Securrency’s enterprise-grade tokenization platform ensures stability, interoperability, and efficiency at every step of the digital asset lifecycle.
+
+While the traditional investment interaction model between investors and private markets operators often limits self-service and transparency for users, the digital assets marketplace provides self-guided onboarding and Know Your Customer (KYC), Compliance Aware Tokenization®, enhanced analytics and reporting, and expanded access to new markets. Unqork’s codeless architecture drives flexible workflows with a robust orchestration to digitize the subscription process, improve regulatory adherence, and increase liquidity. 
+
+“By harnessing the power of blockchain technology to create tokenized assets, automate compliance, and streamline financial transactions, Securrency and Unqork are unlocking the value of digital marketplaces for investors and financial institutions,” said Dan Doney, CEO, Securrency. “We recognized the tremendous value in what Unqork’s codeless architecture can deliver, and are excited to use it with our Capital Markets Platform to help customers grow their private markets businesses and provide greater liquidity and access to investors.” 
+
+“For years, Unqork’s codeless platform has been used by some of the world's largest financial institutions to build mission-critical applications. We are excited to now bring codeless architecture to digital assets to address some of the most important priorities in this growing industry, empowering enterprises with built-in composability, security, and scalability for their most complex applications,” said Gary Hoberman, CEO and founder, Unqork. “Coupled with Securrency’s Capital Markets Platform technology and digital asset expertise, we are delivering a world class token solution for private markets customers looking for a customized end-to-end marketplace experience.”  
+
+To learn more about Unqork, visit unqork.com. 
+
+About Unqork
+
+Unqork is the leading codeless development platform that helps leading organizations build, deploy and manage complex software without having to think about code. Unqork created the codeless architecture standard – the future of software development that frees the world’s largest enterprises from the pitfalls of legacy code and allows them to focus on innovation to drive business and maintain a competitive edge. More than one third of Unqork’s corporate customers are in the Fortune 500, with a customer roster that includes Goldman Sachs, Marsh, Maimonides Medical Center and the U.S. Department of Health and Human Services. To learn more, please visit: https://www.unqork.com. 
+
+About Securrency
+
+Securrency is a financial and regulatory technology company that is harnessing the power of blockchain to deliver white-labeled,  institutional-grade digital asset marketplaces and stimulate global liquidity. Securrency is driving change at the core of financial services via a fully-interoperable and patented Compliance Aware Token® Framework that interconnects traditional financial platforms and next-generation blockchain networks. To learn more, visit: https://securrency.com.
+
+Media Contact
+
+Wynn Mitchell
+
+comms@unqork.com
+
+
+Unqork Unveils New Third Party Publisher Program for the Unqork Marketplace
+
+One year after the launch of the first-ever no-code marketplace, the new program features premier application accelerators from EY and Quantiphi
+
+NEW YORK – July 20, 2022 – Unqork, the leading enterprise no-code platform, today released a suite of new features to the Unqork Marketplace, including a new third party publisher program. The Unqork Marketplace is the first-ever no-code marketplace, designed to help users build complex software faster through an extensive library of self-service developer tools, ranging from pre-built software snippets and templates to integrations from over 25 world class partners. By using just the top 5 snippets on the Unqork Marketplace alone, developers have avoided writing 630,000 lines of code, significantly reducing application time to market and freeing developers to work on more complex projects. The latest additions to the Unqork Marketplace include the launch of a third party publisher program and new listings that will provide even more value to users by expanding the Unqork ecosystem and unlocking developer productivity.  
+
+Built entirely on Unqork’s no-code platform, the Unqork Marketplace serves as an innovation hub for developers, providing no-code accelerators that unlock significant time savings for more efficient application builds. Developers have used the Unqork Marketplace to create mission-critical applications – ranging from digital front offices and policy administration applications for insurance carriers to foreign exchange trading platforms and telemedicine applications. 
+
+“Since we first launched the Unqork Marketplace a year ago, users have unlocked significant productivity gains and created some of the most complex, enterprise-grade applications using the accelerators created by Unqork,” Gary Hoberman, CEO and Founder, Unqork. “Now, our partners will be able to create and share their own accelerators directly with the Unqork community, further multiplying the productivity gains for users and opening the door for even more innovation.”
+
+The new updates to the Unqork Marketplace include: 
+
+    Third Party Publisher program: For the first time, third party publishers can launch applications on the Unqork Marketplace, providing developers with expanded access to industry-specific tools that enable increased business agility and innovation. As more publishers add to the library, developers will have access to an extensive library of industry use cases to create complex applications tailored to their individual business needs. Ernst & Young LLP (EY US) and Quantiphi have launched the first application accelerators as part of the program:
+        EY has launched two applications to the Unqork Marketplace:
+            Add Insurance Now enables private travelers to request an insurance quote and purchase supplemental accident insurance almost instantly. 
+            Global Resource Tracker gives business logistics managers a wide-angle view of global resources– from machinery to project architects– at work locations around the world at any given time, critical for effective logistics, resource and financial planning. 
+        Quantiphi, an AI-first digital engineering company, has launched Dociphi, an AI-powered document processing application engineered to fast-track end-to-end document workflows, while ensuring regulatory compliance. Dociphi provides routine document workflows, eliminates manual errors and generates insights to prevent fraud for claims processing, commercial lending, mortgage underwriting and more. Dociphi aims to enable insurance workflows and help organizations:
+            Process 2x more documents with near-zero errors.
+            Reduce document processing costs by over 35% and operating costs by up to 30%.
+            Accelerate time to market with prebuilt tools.
+    New Marketplace listings, including:
+        A Google Calendar integration streamlines merging Google Calendar within Unqork applications to make scheduling appointments on applications like healthcare digital front doors, investor portals and case management systems a seamless experience for the millions of Google Calendar users. 
+        The Status Blueprint Accelerator transforms the creation of bespoke status management systems by centralizing and standardizing statuses, actions and checklist items as a dynamic component of a case management application. This expedites status blueprints to be defined in minutes – rather than hours.  
+
+"Quantiphi and Unqork are committed to driving rapid innovation and accelerating time to market across the financial services and insurance industry,” said Bhaskar Kalita, Global Head, Financial Services and Insurance, Quantiphi. “The launch of Quantiphi's AI-powered document processing platform, Dociphi, on the Unqork Marketplace will enable financial organizations to quickly integrate Dociphi into their unique workflows and uncover actionable insights from unstructured data."
+
+To learn more, visit the Unqork Marketplace.
+
+About Unqork
+
+Unqork’s enterprise no-code platform helps leading organizations build, deploy and manage complex software without having to think about code. Unqork created the Codeless Architecture standard – the future of software development that frees the world’s largest enterprises from the pitfalls of legacy code and allows them to focus on innovation to drive business and maintain a competitive edge. More than one third of Unqork’s corporate customers are in the Fortune 500, with a customer roster that includes Goldman Sachs, Marsh, Maimonides Medical Center and the U.S. Department of Health and Human Services. To learn more, please visit: https://www.unqork.com. 
+
+Media Contact
+
+Dana Davis
+
+comms@unqork.com
+
+
+Unqork Granted U.S. Patent for its Drag-and-Drop Software Development Platform for Advanced Applications
+
+NEW YORK – May 26, 2022 – Unqork, the leading enterprise no-code platform built upon the Codeless Architecture, today announced that the United States Patent and Trademark Office has recently granted US Patent No. 11,204,690 to Unqork, which protects the company’s enterprise-grade Codeless Architecture platform. The patent, titled “Systems and methods for software development and deployment platforms having advanced workflow and event processing capabilities and graphical version controls,” further strengthens Unqork’s intellectual property as the first-ever no-code development platform designed to support the complexity, scale and security that enterprise mission-critical applications require. 
+
+US Patent No. 11,204,690 reflects the Unqork platform’s ability to generate and deploy advanced applications, which offers users drag-and-drop functionality to easily define content, workflow and background processes for mission-critical applications. Unqork’s technology, as described in the issued patent, also includes pre-built bundles that can be integrated into applications to define input fields, design layouts, application functions, preconfigured templates and background processes for developers. The patent grant is the first for Unqork, with several additional patent applications pending.
+
+Since Unqork’s founding in 2017, enterprise industry leaders have used Unqork’s no-code platform to bring applications to market faster, at a lower cost and with fewer vulnerabilities than traditional coding methods– all without creating a single line of code. In 2021, Unqork’s technology enabled the elimination of 188 million lines of code, resulting in the saving of over $678 million of tech debt, and allowing customers to focus on innovation and building better software to support and enhance their business. 
+
+Today, customers are using Unqork to adopt Codeless Architecture – an open-standard approach to software development that allows organizations to build and manage best-of-breed applications without generating any underlying code. This modern approach allows enterprises to build new software and realize the full potential of their existing applications without having to worry about code. 
+
+“Since day one, Unqork has had a unique approach – putting visual, drag-and-drop no-code technology in the hands of experienced users to help them build some of the most complex enterprise apps. This patent grant is further validation that what we're doing is truly one-of-a-kind,” said Gary Hoberman, CEO and founder, Unqork. 
+
+For more information, visit Unqork.com.
+
+ 
+
+About Unqork
+
+Unqork’s enterprise no-code platform helps leading organizations build, deploy and manage complex software without having to think about code. Unqork created the Codeless Architecture standard – the future of software development that frees the world’s largest enterprises from the pitfalls of legacy code and allows them to focus on innovation to drive business and maintain a competitive edge. More than one third of Unqork’s corporate customers are in the Fortune 500, with a customer roster that includes Goldman Sachs, Marsh, Maimonides Medical Center and the U.S. Department of Health and Human Services. To learn more, please visit: https://www.unqork.com. 
+
+Media Contact
+
+Dana Davis
+
+comms@unqork.com
+
+
+Unqork Announces Spring 2022 Platform Update and Expanded Adoption of the Codeless Architecture Standard
+
+An extensive set of new platform features allow enterprises to build better software, faster with no-code while enabling further support for a Codeless Architecture approach
+
+NEW YORK –April 27, 2022 – Unqork, the leading enterprise no-code platform, today announced its Spring 2022 Platform update, the first major platform update of 2022. The new platform capabilities deepen the existing benefits for developers building on Unqork, while also supporting Codeless Architecture, an open-standard approach to software development that allows organizations to build and run applications without ever thinking about the underlying code. 
+
+As enterprises continue to transform, they are often forced to choose between temporarily slowing - or even stopping - some portion of daily operations while they modernize applications, or continuing with business-as-usual until applications reach their end-of-life and must be addressed. Codeless Architecture frees companies from this choice, allowing them to build new applications that are compatible with their existing technologies, whether that be legacy code including low-code or siloed tools. This approach to modernization allows enterprises to build new software and realize the full potential of their existing applications – all without generating or seeing a single line of code. 
+
+With a Codeless Architecture, companies can: 
+
+    Take a best-of-breed approach to innovation with a single source of truth for customer IP that is transparent and portable. 
+    Build an integrated ecosystem for their tech vendors of choice by unifying disparate applications.
+    Orchestrate complex business processes by automating in-depth workflows and manage complex routing logic.
+    Deliver branded digital experiences at scale for a seamless user experience.
+
+The Codeless Architecture approach was born out of Unqork’s no-code platform and the ability it gives customers to build mission-critical, complex applications without writing code. As more and more customers pursue a codeless approach, Unqork has unveiled a new set of updates to the platform that make it easier than ever for users to build complex applications by leveraging a robust set of codeless components. 
+
+Unqork’s Spring 2022 Platform Updates include:
+
+    An enhanced Grid System that allows users to easily access, visualize and interact with their data at-scale. The intuitive configuration experience will enable customers to build Dynamic, Uniform and Freeform grids from the ground up, giving them the ability to quickly analyze data, optimize style and design flexibility and create bespoke layouts for data exploration at scale. The Grid System supports a wide variety of use cases like business logic and validation, simple or complex data entry, dashboards and data exploration.
+        The Grid System will also be available to users via listings in the Unqork Marketplace - Grid Syntax Targeting & Output Types and Dynamic Index - which are foundational in helping users understand how to best leverage the grid system in their application builds.  
+
+    The new Enterprise View provides users with a comprehensive overview of their Unqork environment. A suite of dashboards provides users with a holistic view of the health, progress and risk points of each application they’ve built, helping users monitor development progress and identify and address any vulnerabilities. Built entirely on Unqork’s codeless platform, Enterprise View makes it easy for stakeholders across the enterprise - both technical and non-technical - to understand the health of their environment and the overall efficiency of the development process, thus ensuring that higher-quality applications are delivered to the end-user.
+
+Expanding the first no-code Marketplace 
+
+Along with the platform updates, Unqork has released new listings to the Unqork Marketplace that enhance developer productivity and support a codeless environment, including: 
+
+    A Google Translate integration that users can easily configure, giving apps built on Unqork the ability to leverage Google Translate to convert text from one language into another. (View Listing)
+    A Webhook API Snippet to help Unqork users expedite the configuration of a standardized webhook in Unqork, ultimately saving users an average of 5 hours in application builds. This snippet was created in record time - less than two weeks - in response to user interest in this functionality. (View Listing)
+    A “For Loop” Snippet that allows a user to perform a looping action over a large set of data. This snippet helps users save hours in application builds compared to traditional code, for use cases like validating addresses or updating multiple submissions at once. It has quickly become the #1 listing in the Marketplace. (View Listing)
+
+“As a former Fortune 50 CIO, I know that leading enterprises want technology that just works for their business but the reality they face is much messier–multiple tabs, multiple tools, disconnected data and a jungle of legacy code that results in a lousy customer and employee experience,” said Gary Hoberman, CEO and founder, Unqork. “Codeless Architecture allows Unqork’s customers to modernize their business without disrupting it by giving that existing legacy mess a single, clean and modern interface, while still allowing them to create new applications faster and at a lower cost than using code to drive their business forward. All of these features further that mission to give our customers a better way to build and manage software with no-code.”
+
+To learn more, visit here. 
+
+ 
+
+About Unqork
+
+Unqork’s enterprise no-code platform helps leading organizations build, deploy and manage complex software without having to think about code. Unqork created the codeless architecture standard – the future of software development that frees the world’s largest enterprises from the pitfalls of legacy code and allows them to focus on innovation to drive business and maintain a competitive edge. More than one third of Unqork’s corporate customers are in the Fortune 500, with a customer roster that includes Goldman Sachs, Marsh, Maimonides Medical Center and the U.S. Department of Health and Human Services. To learn more, please visit: https://www.unqork.com. 
+
+Media Contact
+
+Dana Davis
+
+comms@unqork.com
+
+
+Unqork’s Enterprise No-Code Platform Selected by SMBC to Power Its Digitization Efforts
+
+SMBC will leverage Unqork to build out an internal Center of Excellence for digitization using no-code
+
+NEW YORK – March 31, 2022 – Unqork, the leading enterprise no-code platform, announced it has entered into an agreement with Sumitomo Mitsui Banking Corporation (“SMBC”) to use Unqork’s no-code platform to digitize core SMBC operations as part of the bank’s focus on innovation and automation. The announcement comes as part of a digital strategy driven by SMBC’s Digital & Innovation group to build strong in-house capabilities and an internal Center of Excellence around no-code, digital, and automation.
+
+The partnership will start with a focus on digitization within SMBC’s capital markets division, and then scale to support SMBC’s larger digital strategy and development of an internal Center of Excellence. By rapidly identifying use cases across SMBC that can benefit from digitization and automation and then bringing solutions to market at faster speed with tools like Unqork, SMBC will benefit from a significant competitive advantage. 
+
+“It is our pleasure to partner with Unqork to accelerate our goal of removing manual interventions in various key bank processes, which will help us simultaneously reduce costs associated with manual processes, and improve our data quality which will support the innovation and fintech initiatives we have on our roadmap,” said Steve Dunn, Head of Partnerships, Innovation & Fintech at SMBC Americas Division. 
+
+Unqork was designed specifically for highly-regulated industries and has deep experience serving customers in financial services. SMBC chose Unqork as the no-code platform for this effort given its proven ability to deliver business value - helping customers get to market faster while enhancing quality and lowering costs for development and maintenance. 
+
+“Once Unqork is introduced into an organization, there are endless possibilities for digitizing and automating mission-critical processes,” said Rabih Ramadi, Head of Financial Services and Insurance, Unqork. “We are impressed with SMBC’s innovative approach to digitization and are excited to partner with them on this endeavor.”
+
+ 
+
+About Unqork
+
+Unqork is the industry pioneer no-code enterprise application platform that helps large companies build, deploy, and manage complex applications without writing a single line of code. Organizations like Goldman Sachs, Liberty Mutual, the Cities of New York, Chicago and Washington, DC and Maimonides Medical Center are using Unqork's drag-and-drop interface to build enterprise applications faster, with higher quality, and lower costs than conventional approaches. To learn more, please visit: https://www.unqork.com.
+
+About SMBC Group
+
+SMBC Group is a top-tier global financial group. Headquartered in Tokyo and with a 400-year history, SMBC Group offers a diverse range of financial services, including banking, leasing, securities, credit cards, and consumer finance. The Group has more than 130 offices and 85,000 employees worldwide in nearly 40 countries. Sumitomo Mitsui Financial Group, Inc. (SMFG) is the holding company of SMBC Group, which is one of the three largest banking groups in Japan. SMFG’s shares trade on the Tokyo, Nagoya, and New York (NYSE: SMFG) stock exchanges. As of December 31, 2021, its total assets were $2.18 trillion.
+
+In the Americas, SMBC Group has a presence in the U.S., Canada, Mexico, Brazil, Chile, Colombia, and Peru. Backed by the capital strength of SMBC Group and the value of its relationships in Asia, the Group offers a range of commercial and investment banking services to its corporate, institutional, and municipal clients. It connects a diverse client base to local markets and the organization’s extensive global network. The Group’s operating companies in the Americas include Sumitomo Mitsui Banking Corp. (SMBC), SMBC Nikko Securities America, Inc., SMBC Capital Markets, Inc., SMBC Rail Services LLC, Manufacturers Bank, JRI America, Inc., SMBC Leasing and Finance, Inc., Banco Sumitomo Mitsui Brasileiro S.A., and Sumitomo Mitsui Finance and Leasing Co., Ltd.
+
+Media Contact
+
+Dana Davis
+
+comms@unqork.com
+
+
+The U.S. Department of Health and Human Services Selects Unqork’s Enterprise No-Code Platform to Digitize Payroll Processing
+
+Partnership marks Unqork’s expansion into federal government at a time of massive opportunity for digitization and increased efficiencies in government agencies
+
+NEW YORK – February 23, 2022 – Unqork, the leading enterprise no-code platform, today announced that it has entered into an agreement with the Department of Health and Human Services (HHS), to use Unqork’s no-code platform to enhance a number of software applications for the HHS’ Office of the Assistant Secretary for Health (OASH). Unqork’s work with HHS, along with its recent FedRAMP “In Process” designation, validates Unqork’s ability to provide the security and enterprise-grade capabilities that federal departments and agencies need, while allowing them to build mission-critical applications without writing a single line of code.
+
+Using Unqork’s no-code platform, OASH is actively developing applications that streamline manual and labor-intensive business processes to enhance the operations of the Public Health Service (PHS). The project will be led by the Office of the CIO within HHS’ Office of the Assistant Secretary for Health, and the contract is through Carahsoft Technology Corp®. 
+
+Unqork worked with HHS to achieve its FedRAMP “In Process” status and will continue working with HHS to achieve FedRAMP Authorization status. 
+
+“This is a moment of tremendous opportunity to modernize core processes at all levels of government and Unqork’s no-code platform is well-positioned to help government agencies on their digitization journey. The pandemic has greatly accelerated the timeline for virtualizing government services and Unqork has a strong track record at the state and local level providing secure, flexible no-code solutions to enable governments to digitize everything from marriage licenses to building permits to Covid relief efforts,” said Kim Thompson, VP of Federal Sales at Unqork. “We applaud the technology vision of HHS and are proud to support their efforts to increase operational efficiencies around payroll.”
+
+To learn more about Unqork’s work in the public sector, see here.
+
+ 
+
+About Unqork
+
+Unqork is the industry pioneer no-code enterprise application platform that helps large companies build, deploy, and manage complex applications without writing a single line of code. Organizations like Goldman Sachs, Liberty Mutual, the Cities of New York, Chicago and Washington, DC and Maimonides Medical Center are using Unqork's drag-and-drop interface to build enterprise applications faster, with higher quality, and lower costs than conventional approaches. To learn more, please visit: https://www.unqork.com.
+
+Media Contact:
+
+Dana Davis
+
+comms@unqork.com 
+
+
+Unqork Expands Asia-Pacific-Japan Presence
+
+Driven by customer momentum, Unqork appoints Luke McCormack as Head of Asia-Pacific-Japan, with plans to expand headcount and invest heavily in the region
+
+NEW YORK – February 21, 2022 –Unqork, the leading enterprise no-code platform, today announced it is expanding its Asia-Pacific-Japan (APJ) presence to meet market demand in the region. With a growing list of customers across the region, the announcement signals Unqork’s continued investment in the global expansion of its customer base and broader delivery ecosystem. As part of the expansion, Unqork will add headcount within its sales and marketing functions as well as ecosystem development and delivery capabilities. 
+
+In order to advance efforts throughout the region, Unqork has appointed Luke McCormack to lead its growth in APJ. McCormack joins Unqork after serving as the Asia-Pacific Vice President at Pegasystems for over two decades. McCormack brings a deep understanding of the business challenges facing leading enterprises across ANZ, Asia, and Japan, as well as a nuanced expertise of the rapidly evolving application development space. In this role, McCormack will leverage his knowledge to lead business development, cultivate regional talent, and grow the partner ecosystem in APJ. 
+
+“After 25 years in the industry, it's clear that legacy solutions are nowhere near meeting the needs of enterprises looking to innovate,” said Luke McCormack, Head of APJ, Unqork. “Unqork’s platform is a perfect fit for these enterprises, and there is an incredible opportunity for a codeless approach to take over the region. I’m thrilled to join the team at this exciting moment of growth, and am excited by the opportunity to expand Unqork’s already stellar customer and partner footprint throughout APJ.”
+
+Unqork has seen impressive early momentum in the region with a growing customer base, including leaders in insurance and financial services. With the addition of McCormack, Unqork will also focus on hiring to expand its regional headcount and investing in sales, marketing, and delivery efforts. This announcement comes in parallel to Unqork’s continued expansion in EMEA, with a growing footprint in its London office. 
+
+“The Asia-Pacific region contains some of the most innovative companies in the world, many of which are looking for ways to modernize and future proof their operations. The momentum we’ve seen from customers in the region signals that there is a massive demand for the benefits of a codeless architecture and Unqork is well-positioned to meet it,” said Gary Hoberman, founder and CEO, Unqork. “Luke has a proven track record of bringing solutions to the most innovative and successful enterprises in the region that drive their business forward. He is the perfect leader to do this for Unqork and will be instrumental in helping us meet the demand we’re seeing in the region while building out a world-class organization."
+
+To learn more about Unqork, visit unqork.com.
+
+ 
+
+About Unqork
+
+Unqork is the industry pioneer no-code enterprise application platform that helps large companies build, deploy, and manage complex applications without writing a single line of code. Organizations like Goldman Sachs, Liberty Mutual, the Cities of New York, Chicago and Washington, DC and Maimonides Medical Center are using Unqork's drag-and-drop interface to build enterprise applications faster, with higher quality, and lower costs than conventional approaches. To learn more, please visit: https://www.unqork.com.
+
+Media Contact:
+
+Dana Davis
+
+comms@unqork.com 
+
+ Unqork Receives FedRAMP® Authorization
+
+Hear from Unqork's CISO on how Federal Agencies can now securely leverage codeless development—the next step beyond no-code—to significantly accelerate their move to the cloud
+
+
+Unqork For Government Achieves FedRAMP® Authorization
+
+New York City, New York -  April 24, 2023 - Unqork, the leading Codeless as a Service platform, today announced that it has achieved Authorization to Operate (ATO) on the Federal Risk and Authorization Management Program (FedRAMP®) Marketplace. Unqork enables customers, now including the Federal Government, to democratize technology and free themselves from the pitfalls of legacy code, unlocking innovation and speed to market with enterprise grade performance, scale, and security. The Department of Health and Human Services is the first federal agency to use Unqork for Government from the FedRAMP Marketplace to digitize payroll processing within the agency’s Office of the Assistant Secretary for Health (OASH). 
+
+Unqork is a new way for governments and enterprises to build and run applications ten times faster and 65% cheaper by replacing language – legacy code – with data. Through a universal data definition, Unqork’s codeless engine powers beautiful front ends, scalable APIs, secure and performant back-ends, and everything in-between for the most stringent requirements of the Federal government. Unqork’s customers include the largest regulated industries including banks, asset managers, insurance companies, state and local agencies, and healthcare providers.  
+
+“We’re thrilled to have achieved FedRAMP authorization so quickly in the five short years since Unqork was founded – a major testament to the security standards of the Unqork platform,” said Gary Hoberman, Founder and CEO, Unqork. “Now that Unqork’s codeless platform has received authorization on the FedRAMP marketplace, federal agencies have access to digital solutions that fuel their modernization efforts. We are excited to bring our codeless technology to the Federal agencies and team with them to unlock innovation and migrate legacy systems to the cloud  ”
+
+To learn more about Unqork’s work in the public sector, see here.
+
+ 
+
+About Unqork
+
+Unqork is the leading Codeless as a Service platform that helps leading organizations build, deploy and manage complex software without having to think about code. Unqork created the codeless architecture standard – the future of software development that frees the world’s largest enterprises from the pitfalls of legacy code and allows them to focus on innovation to drive business and maintain a competitive edge. More than one third of Unqork’s corporate customers are in the Fortune 500, with a customer roster that includes Goldman Sachs, Marsh, Maimonides Medical Center and the U.S. Department of Health and Human Services. To learn more, please visit: https://www.unqork.com. 
+
+Media Contact
+
+Wynn Mitchell
+
+comms@unqork.com
+
+
+Unqork’s Enterprise No-Code Platform Now Available in AWS Marketplace
+
+NEW YORK – January 19, 2022 – Unqork, a leading enterprise no-code platform, today announced the availability of the Unqork platform in the AWS Marketplace, a digital catalog with thousands of software listings from independent software vendors that make it easy to find, test, buy, and deploy software that runs on Amazon Web Services (AWS). The listing in AWS Marketplace makes it even easier for enterprises to discover Unqork and leverage it’s no-code platform to build, deploy, and manage complex, mission-critical software faster and at a lower cost—all without writing a single line of code. 
+
+Unqork’s inclusion in AWS Marketplace reflects the growing demand for enterprise no-code services across industries. Unqork was designed specifically for highly-regulated industries like financial services, insurance, and healthcare, where it helps customers get to market faster while enhancing quality and lowering costs for development and maintenance. As enterprises face increasing pressure to digitize, more and more businesses are turning to no-code for their software development-- making Unqork a perfect fit for users of the AWS Marketplace.
+
+“Unqork’s no-code platform enables enterprises to deliver mission-critical applications with unprecedented flexibility and speed,” said Christian Barrera, Vice President, Alliances & Ecosystem at Unqork. “We’re honored by AWS’ decision to include Unqork in AWS Marketplace, and look forward to working with AWS to expose more enterprises to the power of no-code and the Unqork platform.” 
+
+To learn more about Unqork listing on the AWS Marketplace, see here.
+
+About Unqork
+
+Unqork is the industry pioneer no-code enterprise application platform that helps large companies build, deploy, and manage complex applications without writing a single line of code. Organizations like Goldman Sachs, Liberty Mutual, the Cities of New York, Chicago and Washington, DC and Maimonides Medical Center are using Unqork's drag-and-drop interface to build enterprise applications faster, with higher quality, and lower costs than conventional approaches. To learn more, please visit: https://www.unqork.com.
+
+ 
+
+Media Contact:
+
+Dana Davis
+
+comms@unqork.com 
+
+
+Unqork Awarded a Software Licensing Program Contract by the State of California
+
+Contract streamlines access to Unqork’s enterprise no-code platform for state and local departments
+
+NEW YORK – January 11, 2022 –Unqork, the leading enterprise no-code platform, today announced that Unqork is now an approved vendor for the Software Licensing Program (SLP) within the State of California. The contract simplifies the procurement process for state and local agencies in California, allowing them to leverage Unqork’s no-code platform to build mission-critical, enterprise-grade software in a codeless architecture. 
+
+Administered by California’s Department of General Services, the SLP program establishes pre-negotiated contracts with software vendors, reducing the burden of the procurement process on individual departments. As an approved SLP vendor, Unqork’s no-code platform will be easily accessible to agencies throughout the State of California, allowing them to build, deploy and manage complex applications without writing a single line of code. 
+
+Unqork’s platform can help governments innovate licensing, permitting and regulatory workflows; virtualize in-person services; conduct complex benefits and case management; and more. With Unqork’s drag-and-drop interface, engineers can build and deploy software faster, significantly reducing development timelines and cost of ownership, while bringing much needed relief to understaffed tech teams.
+
+“At a time when virtual government services are vital to every community, Unqork’s enterprise no-code platform allows governments to quickly deliver mission-critical applications to the people they serve,” said Clint Buytenhuys, Vice President of State & Local, Unqork. “Being awarded contracts such as the California SLP is an essential step in simplifying the procurement process for California government departments to acquire the Unqork platform, in turn enabling them to quickly deliver internal and external government services at scale.”
+
+Working alongside Unqork, Sacramento-based Pinnacle Advocacy was instrumental to this effort to streamline access to the Unqork platform. Unqork solutions can be accessed on the SLP through these reseller partners: Allied Network Solutions, Carahsoft Technology Corp®, Solutions Simplified.
+
+To learn more about Unqork’s work in the public sector, visit unqork.com.
+
+About Unqork
+
+Unqork is the industry pioneer no-code enterprise application platform that helps large companies build, deploy, and manage complex applications without writing a single line of code. Organizations like Goldman Sachs, Liberty Mutual, the Cities of New York, Chicago and Washington, DC and Maimonides Medical Center are using Unqork's drag-and-drop interface to build enterprise applications faster, with higher quality, and lower costs than conventional approaches. To learn more, please visit: https://www.unqork.com.
+
+ 
+
+Media Contact:
+
+Dana Davis
+
+comms@unqork.com 
+
+
+Unqork Debuts a New Suite of Healthcare Integrations in the Unqork Marketplace
+
+New integrations with Uber Health, Workpath, Infermedica and Ribbon Health open up the Unqork Marketplace to healthcare customers
+
+NEW YORK – November 2, 2021 – Unqork, the leading enterprise no-code platform, today announced the launch of a new suite of healthcare integrations in the Unqork Marketplace, the first no-code marketplace. Pre-built integrations with Uber Health, Workpath, Ribbon Health and Infermedica will be accessible via the Unqork Marketplace as part of an extensive library of no-code assets that can be used to jumpstart healthcare projects and build enterprise software faster, at a higher quality and a lower cost than methods that depend on coding. As the first set of accelerators in the Unqork Marketplace designed specifically for healthcare customers, this launch opens the door for health plans, life sciences companies and providers to reap the benefits of the Unqork Marketplace. 
+
+“The pandemic has placed a spotlight on the direct link between software and patient care, demonstrating the necessity of digital capabilities for healthcare organizations,” said Kara Dennis, Head of Healthcare, Unqork. “These new integrations connect Unqork’s customers with leading health technology and services, allowing them to maximize the potential of Unqork’s no-code platform to build best-in-class digital experiences. These solutions enhance a healthcare companies’ ability to modernize patient and member experiences, and to optimize internal workflows.” 
+
+Supporting at-home and on-site patient care
+
+For healthcare organizations using Unqork to modernize member and patient experiences, the Uber Health and Workpath integrations provide essential capabilities for supporting on-site and at-home patient care, respectively. 
+
+    Uber Health’s HIPAA-enabled solutions support healthcare organizations by providing access to stress-free transportation for those they care for. By integrating with the Uber Health platform, Unqork customers will be able to efficiently configure an administrative interface for requesting and managing rides. Leveraging Uber Health, Unqork customers can (a) help their patients get to and from critical office visits, supporting patient retention and adherence to care plans; and (b) help study participants get to study sites, increasing the likelihood of attendance with a tech-forward approach. 
+    Workpath enables healthcare companies to provide on-demand, in-home services by dispatching healthcare professionals to a patient’s home from the company’s nationwide network. The Workpath integration allows Unqork’s customers to quickly configure scheduling capabilities directly in their applications. With Workpath’s API, patients benefit from a white-labeled experience that allows them to provide their information, schedule an at-home visit at their convenience, receive confirmation and real-time notifications, and communicate with healthcare professionals.
+
+These integrations support clinical trial enrollment and onboarding for life sciences companies, and enable enhanced member and patient services for payers and providers. 
+
+Enhancing member services
+
+For health plans, providing modern, unified digital experiences for members has become essential. With Unqork, health plans can build prospect portals, member onboarding, and other member experiences with a wide array of self-service tools and health management recommendations, including: 
+
+    Infermedica’s medical guidance platform for pre-diagnosis and triage. Infermedica combines the latest clinical evidence with advanced machine learning to help patients and providers make important healthcare decisions with confidence. With the Infermedica integration, health plans can enhance their member experience with digital front door tools for improved diagnostic accuracy and triage guidance.
+    Ribbon Health’s healthcare data platform provides critical infrastructure that payers, providers, and digital health solutions can use to enable accurate provider directories, reliable referral management, and efficient care navigation. Through the Ribbon Health integration, Unqork’s customers can connect their member experiences with a provider database, giving members the ability to query for in-network doctors and filter to find the best fit for their criteria. 
+
+To learn more, visit the Unqork Marketplace.
+
+About Unqork
+
+Unqork is the industry pioneer no-code enterprise application platform that helps large companies build, deploy, and manage complex applications without writing a single line of code. Organizations like Goldman Sachs, Liberty Mutual, the Cities of New York, Chicago and Washington, DC and Maimonides Medical Center are using Unqork's drag-and-drop interface to build enterprise applications faster, with higher quality, and lower costs than conventional approaches. To learn more, please visit: https://www.unqork.com.
+
+ 
+
+Media Contact:
+
+Dana Davis
+
+comms@unqork.com 
+
+
+Unqork Announces First-Annual Customer Award Winners
+
+Enterprise no-code leader celebrates customer innovation and leadership following the Unqork Create conference
+
+NEW YORK – October 12, 2021 –Unqork, the leading enterprise no-code platform, today announced the winners for its first-annual Unqork Customer Awards following Unqork Create, the first-ever enterprise no-code conference.
+
+The Unqork Customer Awards highlight companies and people that are using enterprise no-code to build mission-critical applications to drive their businesses and industries forward. They celebrate the groundbreaking ways that no-code is being used and the creative vision of the technology leaders who are leveraging Unqork to expand the limits of software.
+
+“At Unqork, we thrive on our customers’ success. The whole reason we do what we do is to provide enterprises with a better way to build software--without creating any code--so they can focus on innovating and driving the business forward and not be held back by the pitfalls of legacy code,” said Gary Hoberman, founder and CEO, Unqork. “All of our customers are visionaries that have rejected the status quo to take a new approach to software development and they are creating a competitive advantage today that will keep them at the forefront of their industries for years to come. Congrats to our first-ever Customer Award Winners!”
+
+2021 Unqork Customer Award Winners:
+
+    Insurance Innovator: Property & Casualty: Liberty Mutual
+    Best Startup Application: FOXO Technologies 
+    Insurance Innovator: Life & Health: Equitable
+    Insurance Industry Transformation: Marsh McLennan
+    Financial Services Industry Transformation: BlackRock
+    Asset Management Innovation: Vanguard
+    Most No-Code Apps Built: State Street
+    Merchant Services Innovator: JPMorgan Chase
+    Financial Services Incubator: Goldman Sachs Accelerate
+    Citizen Impact: City of Chicago
+    Patient Impact and Healthcare Innovator: Maimonides Medical Center
+    APAC Innovator of the Year: Nippon Life
+    EMEA Innovator of the Year: Convex
+    Creator Team of the Year: Squatch Squad, Principal 
+
+To learn more about Unqork Create, or to watch recorded sessions from the event on demand, please visit Unqork.com. 
+
+ 
+
+About Unqork
+
+Unqork is the industry pioneer no-code enterprise application platform that helps large companies build, deploy, and manage complex applications without writing a single line of code. Organizations like Goldman Sachs, Liberty Mutual, the Cities of New York, Chicago and Washington, DC and Maimonides Medical Center are using Unqork's drag-and-drop interface to build enterprise applications faster, with higher quality, and lower costs than conventional approaches. To learn more, please visit: https://www.unqork.com.
+
+ 
+
+Media Contact:
+
+Dana Davis
+
+comms@unqork.com 
+
+
+Unqork Announces Latest Major Enterprise No-Code Platform Update, Unqork 2021.10
+
+Unqork 2021.10 strengthens enterprise-grade security infrastructure with the launch of Unqork Private Cloud and adds more features to help enterprise developers build better software, faster
+
+NEW YORK – October 12, 2021 – Unqork, the leading enterprise no-code platform, today announced the release of Unqork 2021.10, its second major platform update of 2021. Unqork 2021.10 deepens and expands the benefits that enterprise customers value in Unqork, through new features that empower creators to build complex mission-critical applications even faster, new testing capabilities, an enhanced enterprise-grade security infrastructure and more. Unqork 2021.10 was unveiled today at Unqork Create, the first enterprise no-code conference. 
+
+Included in Unqork 2021.10 is the launch of Unqork Private Cloud, with support of Amazon Web Services (AWS) PrivateLink and Microsoft Azure PrivateLink, which provides a direct, secure connection between Unqork and a customer’s cloud, such that that traffic never leaves their private networks. Connecting private networks enables Unqork Private Cloud use cases that span multiple cloud regions and even an enterprise data center when customers combine PrivateLinks with on-prem connections like AWS Direct Connect and Azure Express Route. The release also introduces industry-first features like a new Testing Tool to streamline testing across cross-functional stakeholders, a new Grid System for aggregating, organizing, presenting, and easy editing of data, a Parallel Execution feature to support simultaneous business processes and a new Discovery Hub for developers and business users to track, prioritize, and measure ROI of all projects.
+
+“At Unqork, we understand the technology and business challenges that today’s enterprises are facing. I lived them myself as a Fortune 50 CIO and we’ve built the platform I needed in that role,”  said Gary Hoberman, founder and CEO, Unqork. “We are constantly improving Unqork to provide businesses with a better way to build enterprise software, and Unqork 2021.10 is a perfect example of what makes our platform so unique and powerful. The core value-prop, an enterprise no-code platform that enables you to bring higher-quality software to market faster, is enhanced by a focus on enterprise-grade security and features like testing and ROI measurement that ensure your technology is driving the business forward. We are on a journey to eliminate legacy code for our customers and this release is another big step forward.”
+
+Best in Class Cloud Security 
+
+Unqork Private Cloud is an enhanced security infrastructure that allows customers to pass data securely between Unqork and their private resources, without ever leaving their private network and traversing the public internet. Unqork Private Cloud works through PrivateLink with AWS and Azure clouds, providing the world’s top businesses with enhanced cloud security while maintaining the cloud-agnostic flexibility of Unqork. Unqork Private Cloud effectively provides integration with private resources and avoids the need for new endpoints on the public internet, enhancing overall cloud security and unlocking more application use cases. Customers using Unqork Private Cloud also benefit from improved application performance, by keeping communication within the same region and through the same cloud provider’s private network. 
+
+The security benefits of Unqork Private Cloud are built upon the already-enhanced security profile of applications built in Unqork’s no-code platform, which benefit from significantly higher-quality than applications that rely on writing code. 
+
+Unified Testing from a Single Dashboard
+
+Unqork’s new Testing Tool provides a central, streamlined dashboard for users across an enterprise to initiate, track and automate testing. Within many enterprises, testing is a segmented process, spread across different teams (e.g AppDev, QA, DevOps), leading to inconsistencies or redundancies, with vulnerabilities sometimes going undetected. Unqork’s new Testing Tool brings all testing information into one central dashboard, allowing for enhanced visibility and coordination, resulting in higher-quality applications. The Testing Tool tracks all tests and outcomes, and allows for tests to be run automatically and simultaneously. Impacted teams are automatically notified of any status changes or test failures, so they can quickly address issues and be aware of any interdependencies with their colleagues. 
+
+Do More With Enterprise Data
+
+Unqork’s new Grid System provides customers with new tools to build rich interfaces, manage and present data, and enable new workloads. Unqork’s Grid System quickly aggregates high-volumes of data from multiple sources, storing everything in a central repository, enabling end-users to analyze data and surface insights faster than ever before. Previously, businesses were limited to manually entering data into static spreadsheets. The grid system is dynamic, meaning users can embed any Unqork component such as buttons or logic to run critical business processes. Deeply integrated with Unqork’s component ecosystem, developers can even build new workflows on top of the Grid System, allowing developers to not only build new UX and UI patterns but also service bespoke business requirements faster than ever before.
+
+Additional 2021.10 Updates 
+
+2021.10 also includes Unqork’s new Discovery Hub, a central location where developers and business users can collaborate alongside one another to track, prioritize, and measure ROI for ongoing projects, and a new Parallel Execution feature, which gives developers the ability to create workflows that support simultaneous automated processes. 
+
+Further Resources 
+
+    Unqork 2021.10 feature briefs
+    Grid System blog
+    Testing Tool blog 
+    Unqork Private Cloud feature briefs for AWS and Azure
+    Discovery Hub blog
+    Parallel Execution blog
+
+About Unqork
+
+Unqork is the industry pioneer no-code enterprise application platform that helps large companies build, deploy, and manage complex applications without writing a single line of code. Organizations like Goldman Sachs, Liberty Mutual, the Cities of New York, Chicago and Washington, DC and Maimonides Medical Center are using Unqork's drag-and-drop interface to build enterprise applications faster, with higher quality, and lower costs than conventional approaches. To learn more, please visit: https://www.unqork.com.
+
+ 
+
+Media Contact:
+
+Dana Davis
+
+comms@unqork.com 
+
+
+Unqork Announces A P&C Product Launcher Application For Insurance Carriers to Automate the Underwriting Process With No-Code 
+
+Customizable, out-of-the-box solution allows carriers to launch new products rapidly and digitize every step of the underwriting process, from intake to bind via a single, integrated platform
+
+NEW YORK – October 4, 2021 – Unqork, the leading enterprise no-code platform, today announced its P&C Product Launcher application to help carriers digitize and automate every step in the underwriting process. Unqork’s application helps carriers break away from the inefficiencies of outdated, manual systems, enabling them to quickly build and launch software without writing or creating a single line of code. As a result, carriers are able to accelerate new product launches, save valuable resources and provide better user experiences for brokers and customers. 
+
+Underwriting processes are foundational for every carrier, yet many use inefficient systems that rely on legacy architecture. These inflexible underwriting systems significantly hinder a carrier’s ability to launch products and update existing ones. Too often, underwriters must work across multiple disconnected systems, which leads to high error rates, slow quote turnaround times, and leaves customers and brokers with a poor user experience. The complexity and costliness of maintaining outdated systems stifles any innovation teams’ ability to make product improvements.
+
+The Unqork P&C Product Launcher helps carriers create an efficient, streamlined and easy-to-use broker portal and underwriter workbench in one integrated platform. The solution offers configurable templates for every step in the underwriting process, from first customer contact, through the application process, all the way to policy delivery. The P&C Product Launcher also includes 70+ pre-built integrations with third-party services, including everything from data enrichment to policy admin systems.
+
+By leveraging Unqork’s enterprise no-code platform, carriers can launch products in as little as 12 weeks that would otherwise take 18 - 24 months to bring to market. With a streamlined, easy-to-use platform, underwriters can focus their time on the highest-value activities: identifying, structuring, pricing, and negotiating the best policies to support top and bottom-line growth for the organization.
+
+With Unqork’s P&C Product Launcher carriers can:
+
+    Pixel-perfect UI: Customize the user experience to precisely meet a carrier’s brand guidelines 
+    Multi-party engagement: Create broker- or client-led intake and self-service workflows that are directly connected to the underwriting workstation for a seamless underwriting experience
+    Streamlined integrations: Leverage integrations with leading insurtechs and data providers, including Dun & Bradstreet’s Company Entity Resolution, DocuSign eSignature and others to accelerate intake, automate clearance, digitize rating, and streamline quote, binder, and policy issuance
+    Digital dynamic workflows: Orchestrate dynamic workflows including assignment, registration, referrals, modeling requests, etc. across multiple products and geographies
+    Transparency and accountability: Manage ownership with automated routing, alerts, and notifications
+
+By implementing Unqork P&C Product Launcher carriers can: 
+
+    Accelerate product launches: Launch new products in 12 weeks with streamlined product development, automated intake, and a built-in underwriter workstation
+    Increase underwriter capacity: Automate manual tasks and streamline the underwriting process to free up underwriters to focus on new business opportunities
+    Reduce operational risk: Automate manual processes, incorporating built-in approval controls, and maintaining an audit trail
+    Improve customer & agent satisfaction: Enhance client, agent/broker, and underwriter experiences through modern UI and self-service capabilities
+
+“Underwriting is one of the most foundational and essential processes for insurance carriers, yet most carriers still rely on inflexible, code-based legacy systems or manual processes that are expensive to build and maintain and create significant workload implications for key underwriting staff,” said Farooq Sheikh, Insurance Go-To-Market Lead, Unqork. “Unqork’s P&C Product Launcher leverages the best of Unqork’s no-code platform, providing carriers with a one-stop-shop for digitizing and automating the entire underwriting process. This is a game-changer for carriers, allowing them to simultaneously free up time and budget resources while providing higher-quality, future-proof software.” 
+
+Unqork’s P&C Product Launcher application is the latest in an extensive suite of capabilities that Unqork offers its customers in insurance. Customers across P&C consumer, commercial, life, annuities, retirement, accident, group benefits and specialty insurance, with carriers, distributors and brokers use the Unqork platform for everything from policy and claims administration to underwriting to servicing, operations and customer service.
+
+To learn more about Unqork’s P&C Product Launcher solution, visit Unqork.com.
+
+ 
+
+About Unqork
+
+Unqork is the industry pioneer no-code enterprise application platform that helps large companies build, deploy, and manage complex applications without writing a single line of code. Organizations like Goldman Sachs, Liberty Mutual, the Cities of New York, Chicago and Washington, DC and Maimonides Medical Center are using Unqork's drag-and-drop interface to build enterprise applications faster, with higher quality, and lower costs than conventional approaches. To learn more, please visit: https://www.unqork.com.
+
+ 
+
+Media Contact:
+
+Dana Davis
+
+comms@unqork.com
+
+
+Unqork Debuts a Plaid Integration for its Wealth Client Onboarding Application, Available Now in the Unqork Marketplace
+
+The Wealth Client Onboarding application is the latest of many recent updates to the Unqork Marketplace since its launch in Summer 2021
+
+NEW YORK – September 28, 2021 – Unqork, the leading enterprise no-code platform, today announced the launch of a new integration with Plaid, a data network powering the digital financial ecosystem, as part of Unqork’s Wealth Client Onboarding accelerator. The customizable accelerator allows firms to quickly establish digital onboarding workflows that are fully integrated with internal and third-party systems. With the addition of the Plaid integration, end-customers can easily and securely link in their other financial accounts and authenticate their banking information. Enterprise customers can learn more about the Wealth Client Onboarding application with Plaid via the Unqork Marketplace, the world’s first no-code marketplace. 
+
+Using Unqork’s enterprise no-code platform, customers can easily configure and customize the Wealth Client Onboarding application to meet their specific needs, including the level of client-advisor collaboration needed. Dynamic workflows guide clients and advisors through the onboarding process, from information-gathering to suitability and product selection to finalization. As part of the information-gathering workflow, the Plaid integration allows firms to easily leverage Plaid’s APIs to securely gather and validate a customer’s banking information, improving financial transparency and enhancing wealth management advice. Unqork customers that use the Wealth Client Onboarding solution see an average of 85% acceleration in the client onboarding process while reducing operational costs by 40%, enabling faster revenue growth, enhanced user experiences, and reduced risk. 
+
+“The Unqork Marketplace has ushered in a new era of innovation for enterprise no-code, providing enterprise customers with easy access to game-changing accelerators and out-of-the box applications. Applications like Wealth Client Onboarding are a force multiplier for developer productivity, allowing engineers to build complex, mission-critical software in a matter of clicks,” said Warren Chen, VP of Marketplace, Unqork. 
+
+“As the premier fintech API, Plaid is an essential partner for Unqork and we are excited to feature them in the Unqork Marketplace and inside this application,” said Brian Karimi-Pashaki, Head of Technology Partnerships, Unqork. “This new integration will provide end-customers of the Wealth Client Onboarding application with fintech-forward, nextgen financial software. All without a single line of code.” 
+
+“Understanding a client’s full financial picture is critical in wealth management and starts by gathering information from all of their other financial accounts. Integrating Plaid into the Unqork platform allows companies to build wealth-related services that have secure, seamless account connection capabilities built right into the client experience,” said Paul Williamson, Head of Revenue and Partnerships at Plaid.
+
+Plaid is the newest technology partner in the Unqork Marketplace, joining a broad array of best-of-breed technologies like Experian, DocuSign, signNow, Twilio and SendGrid. The Plaid integration is the latest in a comprehensive suite of updates to the financial services assets available in the Unqork Marketplace, which provides enterprise customers with an extensive library of no-code assets that can be used to jumpstart projects and build enterprise software faster. Those updates include a new Middesk integration to help Unqork customers verify and monitor their customers, a GLEIF integration to access high-quality legal entity reference data, and templates for NAIC and SIC codes. Beyond financial services, the Unqork Marketplace has been recently updated to include Lob's Address Verification capabilities, a SendGrid extension that enables adding attachments to emails, the SFTP Module Upload Template, and the SFTP Workflow Upload Template.  
+
+To learn more, visit the Unqork Marketplace.
+
+ 
+
+About Unqork
+
+Unqork is the industry pioneer no-code enterprise application platform that helps large companies build, deploy, and manage complex applications without writing a single line of code. Organizations like Goldman Sachs, Liberty Mutual, the Cities of New York, Chicago and Washington, DC and Maimonides Medical Center are using Unqork's drag-and-drop interface to build enterprise applications faster, with higher quality, and lower costs than conventional approaches. To learn more, please visit: https://www.unqork.com.
+
+ 
+
+Media Contact
+
+Dana Davis
+
+comms@unqork.com
+
+
+Unqork’s Enterprise No-Code Platform to be Incorporated in Kennesaw State University's FinTech Curriculum
+
+Next generation of software engineers will learn through hands-on experience building enterprise-grade applications with no-code on Unqork
+
+NEW YORK – September 21, 2021 –Today, Unqork, the leading enterprise no-code platform, announced it has entered into an agreement with Kennesaw State University (KSU) to use Unqork’s no-code platform in the classroom as part of KSU’s FinTech program which is part of the Georgia Fintech Academy diversity workforce initiative. By adding Unqork to the curriculum, KSU students will have the opportunity to learn through experimentation, allowing them to conceptualize and then create enterprise-grade software solutions -- all without writing a single line of code.
+
+To start, the Unqork platform will be incorporated into the curriculum for one of the core courses in the FinTech minor, Digital Payments Security, which is also taught to students throughout the University System of Georgia. Students will get to experience every stage of the enterprise-software development lifecycle, taking their ideas from a concept all the way to production. Over time, KSU plans to increasingly include the Unqork platform into a wider curriculum across FinTech courses.  
+
+This approach is a natural fit for KSU, which has built a FinTech program that values experiential learning opportunities throughout its curriculum and delivers the Digital Payments courses for the Georgia Fintech Academy. KSU students are able to work alongside industry leaders and partners like the Georgia Fintech Academy to gain real-world experience. 
+
+“The Georgia Fintech Academy is excited to launch four digital payments courses instructed by Kennesaw State University,” said Tommy Marshall, Executive Director at the Georgia Fintech Academy of the University System of Georgia. “The opportunity students have to engage the Unqork platform to create payment prototypes is unique and powerful.”
+
+By removing coding as a barrier to software development, Unqork helps expand the pool of individuals who can be involved in the software development process. KSU has already seen the positive impact this can have - enrollment for this fall’s Digital Payments Security course has broadened beyond Computer Science majors, to include students from a wide variety of majors. 
+
+Unqork was designed specifically for highly-regulated industries like financial services, where it helps customers get to market faster while enhancing quality and lowering costs for development and maintenance. As enterprises face increasing pressure to digitize, more and more enterprises are turning to no-code for their software development. Gartner estimates that by 2024, low-code and no-code software will be responsible for more than 65% of application development activity. For the next generation of software developers, knowing how to use a platform like Unqork is an essential skill that will offer them a competitive edge in the job market. 
+
+“Kennesaw State University values student success, which is visible in our commitment to enhancing applied learning opportunities for our students,” said Dr. Khawaja Saeed, Chair of the Department of Information Systems and Security at KSU. “The partnership with Unqork enables us to integrate innovative fintech curriculum offered through the Department of Information Systems and Security at the Coles College of Business with hands-on experience on the leading enterprise no-code platform. Unqork’s platform democratizes application development which aligns with our objectives of making the fintech space accessible to students with diverse interests and backgrounds. We are excited that through this collaboration, students will not only design and develop innovative solutions, but also test them in a real world environment.” 
+
+“This collaboration offers various career opportunities for our students, which at the end of the day is a major source of motivation for us as an institution,” said Humayun Zafar, Fintech Program Coordinator and Professor of Information Security and Assurance at KSU.
+
+“Knowing how to use Unqork’s no-code platform opens so many doors for young graduates,” said Rabih Ramadi, Head of Financial Services and Insurance, Unqork. “We highly admire Kennesaw State University’s innovative approach to experiential learning. We are excited to partner with them on this new initiative, and help arm their students with the knowledge and skills that will help them excel in the world of software development.” 
+
+ 
+
+About Unqork
+
+Unqork is the industry pioneer no-code enterprise application platform that helps large companies build, deploy, and manage complex applications without writing a single line of code. Organizations like Goldman Sachs, Liberty Mutual, the Cities of New York, Chicago and Washington, DC and Maimonides Medical Center are using Unqork's drag-and-drop interface to build enterprise applications faster, with higher quality, and lower costs than conventional approaches. To learn more, please visit: https://www.unqork.com.
+
+ 
+
+About Kennesaw State University 
+
+A leader in innovative teaching and learning, Kennesaw State University offers undergraduate, graduate and doctoral degrees to its more than 41,000 students. With 11 colleges on two metro Atlanta campuses, Kennesaw State is a member of the University System of Georgia and the second-largest university in the state. The university’s vibrant campus culture, diverse population, strong global ties and entrepreneurial spirit draw students from throughout the region and from 126 countries across the globe. Kennesaw State is a Carnegie-designated doctoral research institution (R2), placing it among an elite group of only 6 percent of U.S. colleges and universities with an R1 or R2 status. For more information, visit kennesaw.edu. 
+
+ 
+
+About the Georgia Fintech Academy of the University System of Georgia
+
+The Georgia Fintech Academy is a diversity workforce initiative for the fintech industry. Over 2800 students have engaged in Fintech Academy courses and programs. 30% of these students are women and 71% are from underrepresented groups. Over 300 students are placed into fintech internships and full-time jobs through involvement with the Georgia Fintech Academy. https://www.georgiafintechacademy.org/
+
+ 
+
+Media Contact
+
+Dana Davis
+
+comms@unqork.com
+
+
+Unqork Partners with Indelible Solutions to Bring Program Management Expertise to Public Sector Customers
+
+The partnership will combine the power of Unqork’s enterprise no-code platform with Indelible’s end-to-end program management expertise
+
+NEW YORK – September 10, 2021 – Today, Unqork, the leading enterprise no-code platform, announced it has entered into a partnership with Indelible Solutions, a national management consulting and advisory firm. Through the partnership, Unqork’s customers will benefit from Indelible’s expertise in grants administration, case management and community engagement, allowing them to maximize the potential of software built using Unqork’s no-code platform. The partnership will address a variety of use cases across the public sector, beginning with an effort to help states administer the U.S. Treasury’s Homeowner Assistance Fund (HAF), which provides up to $9.96 billion to support the country’s most vulnerable homeowners. 
+
+The partnership will help tackle many of the challenges that public sector agencies often face in launching new software and public initiatives. Unqork’s no-code platform allows its public sector customers to accelerate the development of complex, mission-critical applications, helping them launch new, high-quality software faster and at lower cost than methods that rely on coding. With Indelible’s end-to-end program management expertise, customers will maximize the potential of new products and ensure that the initiatives are reaching residents in need of support. 
+
+To streamline and accelerate HAF distribution, Indelible and Unqork will offer comprehensive program administration, community outreach and application review to ensure benefits are rapidly deployed to eligible residents. Through a custom application, states will be able to quickly validate identity, residence, income and financial relief sought, all in a detailed case review interface. This solution easily integrates with the ecosystem of mortgage lenders, all while staying compliant with the U.S. Treasury Monthly and Quarterly Reporting requirements and other funding sources. 
+
+Indelible, a minority-owned, Florida-based firm, has the expertise and knowledge to help ensure that housing assistance funds are directed to where they’re most needed. Indelible has engaged with Miami-Dade County to support the administration of Emergency Rental Assistance Program (ERAP) funds for tenants and landlords whose incomes have been devastated by COVID-19, where distribution of rent relief funds outpaced surrounding areas in Florida. 
+
+“By combining Unqork's no-code software with Indelible’s industry-leading consulting, outreach, and project management expertise, we’ve unlocked a powerful partnership that can deliver the technology and support that our public sector customers need to launch new products quickly and at-scale,” said Theresa Ward, Head of State and Local, Unqork. “We look forward to working with Indelible, starting with our efforts around Homeowner Assistance, where our partnership will help states bring relief to those who need it most.” 
+
+“We are excited about the partnership we’ve developed with Unqork,” said Mikhail Scott, Director of Governmental and Corporate Relations with Indelible. “Reports across the country reflect a disparity in effectively deploying relief funds with programs like Emergency Rental Assistance and other benefits initiatives. We understand that there is no cookie-cutter approach to this process. Combining our team’s understanding of case management and community outreach with Unqork’s no-code platform will allow us to provide equitable solutions that are tailored and designed for the communities that we serve.”
+
+To learn more about Unqork’s solutions for the Public Sector, visit unqork.com. 
+
+About Unqork
+
+Unqork is the industry pioneer no-code enterprise application platform that helps large companies build, deploy, and manage complex applications without writing a single line of code. Organizations like Goldman Sachs, Liberty Mutual, the Cities of New York, Chicago and Washington, DC and Maimonides Medical Center are using Unqork's drag-and-drop interface to build enterprise applications faster, with higher quality, and lower costs than conventional approaches. To learn more, please visit: https://www.unqork.com.
+
+About Indelible Solutions
+
+Indelible Solutions is a Florida-based, minority owned business with a proven track record of working with state and local governments to effectively execute programs, ensuring they are equitable and accessible to those who need them the most. To learn more, please visit: https://indelible-solutions.com/.
+
+Media Contact
+
+Dana Davis
+
+comms@unqork.com
+
+
+Unqork Announces the Unqork Create Conference
+
+The first conference of its kind, Unqork Create will convene an audience of developers and technology leaders to explore how no-code is accelerating digital transformation across the enterprise • Unqork Create will be both virtual and in-person, with meetups in New York, Japan and London, from October 12 - 14, 2021
+
+NEW YORK – July 15, 2021 – Unqork, the leading enterprise no-code platform, today announced Unqork Create, a new annual conference series that will explore the latest innovation in enterprise no-code. The inaugural conference will take place October 12 - 14, 2021, with a mix of virtual and in-person activities, including meetups in New York, Japan and London. Unqork Create will offer attendees the chance to understand how no-code is being used by their industry peers, learn more about the Unqork platform, and explore new ways that no-code can accelerate digital transformation within their enterprise. 
+
+The global event will feature speaker sessions with industry experts, a product roadmap discussion with Unqork’s platform leadership, interactive workshops and deep-dives into Unqork best practices, panel discussions with Unqork’s customers and partners, a Customer Awards presentation and more. Unqork Create will kick off with an in-person cocktail reception at The Shed NYC, and throughout the three-day conference, attendees will have opportunities for both virtual and in-person networking. 
+
+“As Unqork becomes the go-to platform for the next generation of software developers, there is a growing community of no-code evangelists -- business and tech leaders, software engineers and partners -- who are seeking a deeper understanding of Unqork and what it can do,” said Gary Hoberman, CEO and founder, Unqork. “Unqork Create will explore the platform and how its being used, to help guests uncover new possibilities and refine their expertise in the technology that is becoming a part of their everyday life. There is a better way to build enterprise software without creating code and we’re excited to showcase it at Unqork Create!”
+
+To save the date for Unqork Create, see here.
+
+The health and safety of our attendees is our top priority. For all in-person events, Unqork will adhere to local health and safety guidelines in New York, Japan and London. 
+
+ 
+
+About Unqork
+
+Unqork is the industry pioneer no-code enterprise application platform that helps large companies build, deploy, and manage complex applications without writing a single line of code. Organizations like Goldman Sachs, Liberty Mutual, the Cities of New York, Chicago and Washington, DC and Maimonides Medical Center are using Unqork's drag-and-drop interface to build enterprise applications faster, with higher quality, and lower costs than conventional approaches. To learn more, please visit: https://www.unqork.com.
+
+ 
+
+Media Contact
+
+Dana Davis
+
+comms@unqork.com
+
+
+Unqork’s Rapid Growth Continues in the First Half of 2021
+
+Enterprise no-code leader sees headcount increase 74%, total revenue 277% YoY as the company adds key roles to leadership team
+
+NEW YORK – July 14, 2021 – Unqork, the leading enterprise no-code platform, has continued to experience a period of rapid growth in the first half of 2021, hitting several momentum benchmarks while adding Chief Revenue Officer Philip Lacor, General Counsel Lori Hoberman, Chief Information Security Officer Marcos Christodonte II, and launching the Unqork Marketplace, the first-ever no-code marketplace.
+
+As leading businesses and government entities increasingly turn to Unqork’s enterprise no-code platform, the company has invested to meet demand. Unqork’s headcount surpassed 500 in Q2, a YoY increase of more than 70% and more than double the headcount the company had at the start of the COVID-19 pandemic in the spring of 2020. Unqork is also expanding its workforce globally, to meet the growing demand for Unqork’s platform from customers in EMEA and APAC.  
+
+Unqork’s total revenue increased 277% YoY in Q1, and Unqork has more than doubled its customer base in the same window. Unqork is rapidly expanding its robust partner ecosystem, adding 37 new solutions and technology partners in the first half of 2021, accelerating the adoption of Unqork across its core industry verticals. 
+
+“Unqork’s continued growth is driving a question in enterprise software, are you still creating legacy or are you using Unqork?” said Gary Hoberman, founder and CEO, Unqork. “Every line of code becomes legacy the second it goes live and somebody has to be responsible for maintaining it. As the complexity and volume of software increases, that burden piles up on software engineers. Unqork's unique no-code approach makes it the only enterprise application development platform that ends legacy while allowing customers to bring solutions to market faster, at a lower cost of ownership and a higher quality.”
+
+Unqork’s ongoing growth is a result of the unique value proposition its enterprise no-code platform offers to organizations in every industry: a no-code approach to software development that brings mission-critical applications to market faster, at a lower cost and at a significantly higher quality than methods that depend on writing code. Particularly, the maintenance and patching burden that legacy code requires keeps software engineers from creating new innovative software to give their businesses a competitive edge. Unqork frees those teams up to focus on adding value instead of rewriting legacy code. 
+
+To learn more about how Unqork is shaping the future of how mission-critical, enterprise software gets built, visit Unqork.com. 
+
+ 
+
+About Unqork
+
+Unqork is the industry pioneer no-code enterprise application platform that helps large companies build, deploy, and manage complex applications without writing a single line of code. Organizations like Goldman Sachs, Liberty Mutual, the Cities of New York, Chicago and Washington, DC and Maimonides Medical Center are using Unqork's drag-and-drop interface to build enterprise applications faster, with higher quality, and lower costs than conventional approaches. To learn more, please visit: https://www.unqork.com.
+
+ 
+
+Media Contact
+
+Dana Davis
+
+comms@unqork.com
+
+
+Unqork Appoints Philip Lacor as Chief Revenue Officer
+
+Lacor brings expertise in scaling and leading global enterprise sales functions as Unqork continues rapid growth
+
+NEW YORK – July 1, 2021 – Unqork, the leading enterprise no-code platform, today announced the appointment of Philip Lacor as Chief Revenue Officer (CRO). Lacor joins Unqork with decades of experience leading global enterprise sales organizations, having held leadership positions at companies including Envoy, Dropbox and Dell. Lacor has a proven track record of scaling enterprise sales functions -- growing teams from dozens to thousands and taking businesses from $30M in Annual Recurring Revenue (ARR) to over $3B in ARR. As Unqork continues to experience a period of rapid growth and seeks to further expand its global footprint, Lacor’s experience will help drive the company’s efforts. 
+
+“Organizations in every industry are turning to software for a competitive advantage. Unfortunately, the limitations of traditional coding methods mean that enterprises can’t green-light every project -- the ones they do pursue take too long and cost too much to get to market, and technology teams spend the majority of their time patching and maintaining legacy code,” said Philip Lacor, Chief Revenue Officer, Unqork. “By providing a new, no-code approach that allows enterprises to build mission-critical software faster, at a lower cost and a much higher quality, Unqork is incredibly well-positioned to capture one of the biggest markets in tech. I’m thrilled to be on this journey with the team.”
+
+Lacor has experience leading all sales and go-to-market functions including customer success, support, channel alliances, business development and sales operations. Most recently, he served as CRO of Envoy, a leading workplace technology platform used in over 14,000 locations around the globe. 
+
+“This is a pivotal moment for Unqork. We’re going after the $500B a year that enterprise organizations spend coding software and our product-market fit is proven by our roster of Fortune 500 customers across industries,” said Gary Hoberman, founder and CEO, Unqork. “As we look to rapidly scale our operations to meet the demand we are seeing for Unqork, Philip’s experience will greatly help us capture this massive opportunity.” 
+
+ 
+
+About Unqork
+
+Unqork is the industry pioneer no-code enterprise application platform that helps large companies build, deploy, and manage complex applications without writing a single line of code. Organizations like Goldman Sachs, Liberty Mutual, the Cities of New York, Chicago and Washington, DC and Maimonides Medical Center are using Unqork's drag-and-drop interface to build enterprise applications faster, with higher quality, and lower costs than conventional approaches. To learn more, please visit: https://www.unqork.com.
+
+ 
+
+Media Contact
+
+Dana Davis
+
+comms@unqork.com
+
+
+Unqork and the City of Chicago’s Housing Solution to Distribute Rent Relief Funds Receives Over 25,000 Applications
+
+Chicago is the latest jurisdiction to leverage Unqork’s flexible no-code Rent Relief solution; to date, Unqork is supporting the management of more than $430M ERAP funds across all customers
+
+NEW YORK – June 24, 2021 – In its latest partnership, Unqork,  the leading enterprise no-code platform, added the City of Chicago to its more than a dozen states, counties and municipalities, leveraging its no-code Rent Relief solution to support the City’s third round of rental assistance since the onset of the pandemic. The Chicago Emergency Rental Assistance Program (ERAP) application portal closed having received more than 25,000 applications with residents applying to receive up to 15 months of rental assistance including 12 months of past due payments and three months of future rent. Chicago’s ERAP was open between May 24 and June 15 and in addition to seeking rental payments, applicants also requested utility assistance through the site. 
+
+“Since we opened our first round of rental assistance grants in March 2020, we’ve seen the need for additional assistance continue to grow and threaten an eviction crisis,” said Marisa Novara, Commissioner, Chicago Department of Housing. “I would like to thank Unqork for its creativity and diligence in creating this customized platform that will allow us to get these funds directly to those who are most in need.”
+
+Unqork Rent Relief gives state and local governments a way to effectively and securely manage ERAP funding and distribute support to the millions of households unable to pay rent and utilities due to the pandemic. Unqork is the only truly end-to-end solution in the market that includes: eligibility assessment, application submission, application review and quality control, payments, auditing, and reporting to the US Treasury and other regulators. Because of Unqork’s flexible nature, the application can be easily customized to meet the specific needs of each jurisdiction while quickly and accurately getting funds to citizens in need, at scale. To date, Unqork Rent Relief is supporting the management of more than $430M of ERAP funding at a total cost of less than $3.2M across all state, city and county customers. 
+
+Unqork’s enterprise no-code platform was built to support the complexity, scale and security that mission-critical applications in regulated industries require, all without creating a single line of code. Using Unqork’s visual drag-and-drop interface, customers are able to build, deploy and manage solutions significantly faster than traditional coding methods.
+
+“We are proud to support the City of Chicago and the Department of Housing, along with all of our state, city and county Rent Relief customers, to ensure that families in need can stay in their homes,” said Cas Holloway, Head of Public Enterprise, Unqork. “COVID-19 has greatly accelerated the need for virtual public services, creating a once-in-a-generation opportunity to modernize the way the government meets the most critical needs of the people they serve.” 
+
+More than a dozen states, counties and municipalities are leveraging Unqork’s no-code Rent Relief solution. In Santa Clara County and the City of San Jose, rent relief funds are being distributed through the countywide Homelessness Prevention System, a partnership between public agencies and local nonprofits, led by Destination: Home and Sacred Heart Community Service. They have used Unqork's Rent Relief application to manage the full ERAP program to benefit the lowest income County residents.
+
+Unqork has a proven track record of swiftly addressing government needs with secure, flexible no-code solutions. Last spring, Unqork supported a number of digitization efforts to help governments support their residents during the pandemic, including the support of COVID hubs for New York City and The District of Columbia.  Unqork partnered with Deloitte to build and launch in one week an application enabling lenders to efficiently process loan requests through the Paycheck Protection Program (PPP). Unqork and KPMG worked with The Community Preservation Corporation to rapidly build and launch a mortgage forbearance solution to support new challenges in the housing industry caused by COVID. Unqork’s Virtual Government Services offering has enabled government agencies to digitize everything from family benefits to marriage licences, building permits or vehicle registration. 
+
+Before Unqork, this kind of transformation would require teams of software developers and expensive retainer contracts to handle future changes. Using Unqork’s no-code platform, government CTOs, CIOs and their teams can work with the agencies they serve to quickly get reliable solutions to market--and easily make future updates without generating any code.
+
+To learn more about Unqork’s solutions for the Public Sector,  visit Unqork.com. 
+
+ 
+
+About Unqork
+
+
+Unqork is the industry pioneer no-code enterprise application platform that helps large companies build, deploy, and manage complex applications without writing a single line of code. Organizations like Goldman Sachs, Liberty Mutual, the Cities of New York, Chicago and Washington, DC and Maimonides Medical Center are using Unqork's drag-and-drop interface to build enterprise applications faster, with higher quality, and lower costs than conventional approaches. To learn more, please visit: https://www.unqork.com.
+
+ 
+
+Media Contact:
+
+Dana Davis
+
+comms@unqork.com
+
+
+Unqork Now Added to Texas’ Department of Information Resources Approved Vendors Through Carahsoft Contract
+
+Unqork’s leading enterprise no-code platform is now approved for use by state and local governments, public education and other public entities in Texas
+
+NEW YORK – June 23, 2021 – Unqork, the leading enterprise no-code platform, today announced that Unqork is now an approved vendor with the Texas Department of Information Resources (DIR) after being awarded to the DIR-TSO-4288 Contract held by Carahsoft Technology Corp., The Trusted Government IT Solutions Provider®. As an approved vendor on Carahsoft’s contract, state and local governments, public education, and other public entities in Texas as well as public entities outside the State can now leverage Unqork’s no-code platform to build mission-critical, enterprise-grade software. 
+
+State and local governments can use Unqork’s no-code platform to build, deploy and manage complex applications without writing a single line of code. Unqork’s platform can help governments innovate licensing, permitting and regulatory workflows; virtualize in-person services; conduct complex benefits and case management; and more.
+
+Being named to contracts such as Carahsoft’s DIR-TSO-4288 Contract and reducing the friction for federal, state and local governments to purchase software will accelerate Unqork’s work in the public sector. This recent award builds on a larger agreement between Carahsoft and Unqork to bring Unqork’s no-code platform to state and local governments in 37 states through Carahsoft’s National Association of State Procurement Officials (NASPO) ValuePoint cooperative purchasing contract, the nation’s most significant public contract cooperative. 
+
+“The public’s need to access critical services virtually is more acute than ever before and will only accelerate,” said Cas Holloway, Head of Public Enterprise, Unqork. “Unqork’s enterprise no-code platform enables governments to deliver mission-critical applications to the people they serve with unprecedented flexibility and speed. Thanks to our inclusion on Carahsoft’s benchmark DIR Contract, state and local agencies in Texas and across the country can now acquire the Unqork platform as quickly as they can build on it.” 
+
+“We are excited to add Unqork to our portfolio of solutions available under our DIR 4288 contract,” said Phillip Carroll, Sales Manager for Unqork at Carahsoft. “Unqork’s no-code platform allows agencies to spin up applications that meet their mission needs faster and free up development teams to focus on operations and security. We look forward to working with Unqork and our reseller partners to bring the benefits of their platform to the State of Texas.”
+
+To learn more about how no code is closing the digital resilience gap in the public sector, visit unqork.com. For additional information and resources about Unqork’s work with Carahsoft, contact the Carahsoft Team at (703) 673-3506 or Unqork@carahsoft.com; or visit carahsoft.com/Unqork. 
+
+ 
+
+About Unqork
+
+
+Unqork is the industry pioneer no-code enterprise application platform that helps large companies build, deploy, and manage complex applications without writing a single line of code. Organizations like Goldman Sachs, Liberty Mutual, the Cities of New York, Chicago and Washington, DC and Maimonides Medical Center are using Unqork's drag-and-drop interface to build enterprise applications faster, with higher quality, and lower costs than conventional approaches. To learn more, please visit: https://www.unqork.com.
+
+ 
+
+Media Contact:
+
+Dana Davis
+
+comms@unqork.com
+
+
+Unqork Launches the Unqork Marketplace
+
+First-ever no-code marketplace significantly ramps up developer productivity with full menu of no-code accelerators while connecting creators to third party, best-of-breed technologies
+
+NEW YORK – June 22, 2021 – Unqork, the leading enterprise no-code platform, today announced the launch of the Unqork Marketplace, the first-ever no-code marketplace. The Unqork Marketplace is a public, self-service marketplace designed to help Unqork customers build mission-critical software faster than ever before and identify new opportunities to optimize complex business processes using no-code. The Unqork Marketplace houses an extensive library of no-code assets, ranging from pre-configured software snippets to pre-built integrations from partners like DocuSign, Experian, SendGrid, signNow and Twilio, to customizable applications that have wide applicability across industries. Developers can quickly pick up these assets and add them to their Unqork environment as a way to jumpstart projects and build enterprise software faster. 
+
+“This is the next level of innovation of enterprise no-code. Building on Unqork already enabled customers to bring products to market more than three times faster than any process that requires coding, but the accelerators in the Unqork Marketplace are a game-changing force multiplier for developer productivity. As the first marketplace of its kind, the Unqork Marketplace is a major milestone for Unqork, our customers and the maturation of no-code,” said Gary Hoberman, CEO and Founder, Unqork. “The Unqork Marketplace supercharges everything our customers love about Unqork, making it easier than ever for enterprises to transform outdated legacy systems and build new mission-critical applications.”
+
+The Unqork Marketplace
+
+The Unqork Marketplace provides a range of accelerators that allow developers to build software faster than ever in Unqork. Through an easy-to-use, self-service interface, customers can browse through an extensive library of no-code assets, select the ones they want to use, and add them to their Unqork environment - all with just a few clicks. The Unqork Marketplace includes snippets (small, reusable pieces of commonly-used functions), templates (pre-configured, reusable blueprints for commonly-used processes or flows) and applications (ready-made-solutions for big problems that impact entire industries). These accelerators drastically increase developer productivity, allowing them to bring complex enterprise-grade processes to market faster than ever. 
+
+Full suite of pre-built integrations 
+
+The Unqork platform integrates with a broad array of leading technology partners, giving customers the ability to integrate with existing processes and streamline user experiences. Now, as part of the Unqork Marketplace, customers have access to a suite of pre-built integrations with best-of-breed technologies that can be implemented in a matter of clicks. Working alongside partners, Unqork created predefined arrangements for the functionalities that are ubiquitous in enterprise apps, such as:
+
+    An Experian integration, which gives Unqork users the ability to search a business by name and location and integrate real time data about a business’s commercial and financial health directly into an application.
+    Integrations with DocuSign eSignature that provide applications built in Unqork with functionality to generate dynamic documents and seamlessly send for signature.
+    airSlate's electronic signature solution, signNow, which integrates with Unqork to give users the ability to generate a dynamic PDF document and send it via email to a user to sign - on any desktop or mobile device.
+    A Twilio integration which allows Unqork users to send SMS directly from an Unqork application to their users.
+    A SendGrid integration where Unqork customers can utilize dynamic email templates to create beautiful and customized emails and send an email directly from their application to their users.
+
+As the Unqork Marketplace grows, so will the suite of integrations. As developers uncover new use cases and Unqork iterates with tech partners, new pre-built integrations will be available in the Unqork Marketplace. 
+
+Access to World Class Solutions Partners
+
+In addition to self-service tools, customers will also be able to access services from Unqork’s bench of solutions partners -- world-class system integrators and consultants with deep industry expertise and experience implementing Unqork solutions. 
+
+“We are seeing a great demand for no-code solutions in the market today as organizations in every industry look to leverage software more and more to drive a competitive advantage, and seek out an approach that allows them to get solutions to market faster and at a lower cost of ownership. Unqork supports complex, enterprise-grade applications with a unique no-code platform and we are working together to build a number of digital solutions that will be listed on the Unqork Marketplace.” – Harvinder Bhatia, MD, KPMG LLP
+
+"The Unqork Marketplace is, in many ways, the physical manifestation of the ecosystem we have been building around Unqork for the last two years,” said Christian Barrera, Vice President, Alliances & Ecosystem, Unqork. “Whether you want to use a snippet that accelerates integrating with world class third-party technologies like DocuSign, Experian, SendGrid, signNow or Twilio, or you want to find a market-leading system integrator building industry solutions powered by Unqork--you can find it in the Unqork Marketplace."
+
+A no-code marketplace built with no-code
+
+The entire Unqork Marketplace was built with no-code on the Unqork platform, further demonstrating that Unqork is a general-purpose development platform that supports serious enterprise software. 
+
+“The Unqork Marketplace is both an accelerator and an innovation platform for customers,” said Warren Chen, VP of Marketplace, Unqork. “Our marketplace increases reusability, allowing customers to benefit from Unqork, its partners and other customers’ expertise. The Unqork Marketplace layers additional acceleration and developer productivity benefits on top of the existing benefits of building in Unqork, while also providing customers with inspiration for new ways to use no-code for enterprise-grade, mission-critical software.”
+
+To learn more, visit the Unqork Marketplace.
+
+ 
+
+About Unqork
+
+Unqork is the industry pioneer no-code enterprise application platform that helps large companies build, deploy, and manage complex applications without writing a single line of code. Organizations like Goldman Sachs, Liberty Mutual, the Cities of New York, Chicago and Washington, DC and Maimonides Medical Center are using Unqork's drag-and-drop interface to build enterprise applications faster, with higher quality, and lower costs than conventional approaches. To learn more, please visit: https://www.unqork.com.
+
+ 
+
+Media Contact
+
+Dana Davis
+
+comms@unqork.com
+
+
+Unqork Announces the Unqork 2021.5 Platform Update
+
+Unqork 2021.5 consolidates SDLC in a single location and adds industry-first capabilities like API Auto-Documentation while seamlessly integrating with existing tools for enterprise teams
+
+NEW YORK – May 20, 2021 – Unqork, the leading enterprise no-code platform, today announced the release of Unqork 2021.5 to make it easier than ever for engineering teams to leverage the power of no-code for business-critical transformation efforts such as app modernization, legacy integrations, cloud migration, microservices adoption and more. The release consolidates existing SDLC features like application dependencies, testing and configuration analysis, deployments and release management, logging, metrics and monitoring in a single tool in the Unqork platform while seamlessly integrating with all external SDLC tools application development teams use today. The release also introduces industry-first features like API Auto-Documentation, Data Model Auto-Documentation and point-in-time application Rollback. Unqork 2021.5 gives enterprise engineering teams more control than ever to follow SDLC best practices on a no-code platform designed for the most complex, mission-critical applications. 
+
+“As a Fortune 50 CIO I managed more than 10,000 software engineers and know first hand the challenges they face in the enterprise. These teams are tasked with building the defining software products that drive their company’s success, while simultaneously maintaining and patching a massive amount of legacy code, modernizing antiquated applications, breaking down monolithic apps to rebuild in a microservices architecture, migrating applications to the cloud, and on and on. They need a solution that helps them move faster, with higher quality and just generally makes their lives easier,” said Gary Hoberman, founder and CEO, Unqork. “We created Unqork to be that solution, to empower software engineers to do more, and the features in the latest release of the Unqork platform make it easier than ever to develop enterprise-grade software with no-code.”
+
+Codeless Support for Business-Critical Engineering Tasks, Industry-First Functionality
+
+Unqork 2021.5 consolidates the SDLC process into a single location making it easier than ever for engineering teams to leverage the power of enterprise no-code to build and maintain mission-critical software, as well as to support a number of the most pressing business transformation efforts impacting every industry. 
+
+“Since the earliest days, Unqork has been designed to give developers a better, codeless way to create enterprise software. That meant having SDLC features baked into the platform so development teams can maintain all the enterprise-grade best practices they need to build mission-critical apps,” said Nick Gamble, Vice President of Solutions, Unqork. “The SDLC features we have consolidated in this latest Unqork release takes no-code SDLC to the next level by bringing life cycle tools in one place and enriching them with valuable insights, allowing developers to take advantage of the speed and flexibility of Unqork’s enterprise no-code, while adhering to best practices. That we built all these features with no-code speaks to the power of Unqork as a general-purpose development platform, rather than an industry-specific one.”
+
+Unqork 2021.5 includes:
+
+    API Auto-Documentation - a no-code industry-first feature that instantly and automatically documents any API built on Unqork. Traditionally, API documentation tends to be done after the fact, and the moment a change in software is made the documentation is out-of-date. By auto-generating APIs in a consistent, uniform format, Unqork allows application development teams to quickly reuse and share APIs via Unqork’s drag-and-drop approach with the added assurance that documentation is always up-to-date. The API Docs Dashboard provides an auto-generated view of all API modules, enabling users to easily plan and design their applications. As organizations continue to migrate to microservices architecture away from monolithic legacy applications, API Auto-Documentation provides instant documentation of each API a microservice exposes and allows relevant features of legacy applications to find new uses in modern builds.
+
+    Data Model Auto-Documentation - an industry-first feature that gives users added governance through acute visibility into every data model that exists in their environment. Unqork was built with a completely integrated data store and is designed to allow users to implicitly define their data model as their application evolves. Now, development teams have a clean change log over who is making alterations in data models while automatically and instantly documenting all models for preferred use in the future. The result is an ability to develop software with incredible speed while still maintaining tight data modeling control and governance. 
+
+    Application Dependencies - As users begin building a solution, the Application Dependencies Dashboard helps them understand the connections that exist in their environment between microservices, external services, applications and modules. The Dashboard identifies and documents all dependencies so creators can plan for any potential downstream changes or anticipate potential issues. The result is similar to aspects of a service mesh, providing a view that shows how various microservices are related so that when a change is made in one place it's very easy to see what might be impacted. 
+
+    Testing and Config Analysis - Unqork 2021.5 includes features to test and debug configurations, to help creators ensure their application has best-in-class quality:
+        Service Logs Dashboard helps engineers identify and address bugs and plan optimizations across different modules and collaborate with fellow creators by providing a rich search interface and visualizations (i.e. charts, graphs) of trends for their most important transactional logs. 
+        The Signal Start Node allows Unqork’s no-code workflows to subscribe to system-published events, facilitating automated tasks such as unit and functional testing. 
+        The Config Analysis Tool automatically checks for any configuration that doesn't abide by best practices for security, stability and performance,  to ensure that only the highest quality applications are being released.
+        Unqork 2021.5 exposes data back to customers to offer native pentesting.
+
+    Deployments, Release Management and Rollback - Once an application has been built, the Unqork Platform helps creators save time, reduce the risk of failure and offers a point-in-time rollback as a safety valve:
+        The Module Revisions Dashboard displays an auditable history of application changes, helping creators see what’s changed and who made those changes since the last time they released it. 
+        The Release Management Tool helps users make informed decisions about which applications to release by organizing versions and releases in an easily searchable format. This helps identify opportunities for releasing multiple applications in unison, so they can improve release efficiency. 
+        Rollback offers a single-click ability to restore a previous version of an application in instances of production issues, changing workstreams, etc.
+
+    Logging, Metrics and Monitoring - Once an application is live, support teams can easily monitor the most important performance metrics in Unqork.
+        A Logs Dashboard proactively monitors for any abnormalities, and surfaces errors and slow-performing requests that may merit attention to creators. 
+        A Metrics Dashboard tracks CPU, Memory, Network Traffic, and more, providing a centralized view to help monitor an environment and ensure everything is running smoothly.
+
+FOXO Technologies Inc. uses AI-driven bioinformatics and microarray technologies to develop and commercialize epigenetic biomarkers of health and aging. FOXO provides insurers, health researchers and life science companies with laboratory services, microarray design and AI-driven bioinformatics software solutions for generating novel health-based insights into lifespan. 
+
+“The combination of common best practices in the software development life cycle and speed of developing reusable components and APIs to support the user interface that Unqork offers has put us on a track to release and iterate that no competitors could do at this cost,” said Tyler Danielson, Chief Technology Officer, FOXO Technologies. 
+
+"Unqork is a dream. Their platform has allowed us to bring our vision to life while efficiently sorting through the details that are inevitably learned during the development process,” said Taylor Fay, Director of Product, FOXO Technologies. “It’s rare to find a vendor partner that comes to the table with a technology so focused on the ultimate success of its customer."
+
+All SDLC features added in Unqork 2021.5 were built with no-code on the Unqork platform. 
+
+ 
+
+Learn More
+
+    Unqork’s Development Lifecycle Capabilities 
+    What’s New In Unqork 2021.5
+    RSVP for upcoming webinar on June 3
+
+ 
+
+About Unqork
+
+Unqork is the industry pioneer no-code enterprise application platform that helps large companies build, deploy, and manage complex applications without writing a single line of code. Organizations like Goldman Sachs, Liberty Mutual, the Cities of New York and Washington, DC and Maimonides Medical Center are using Unqork's drag-and-drop interface to build enterprise applications faster, with higher quality, and lower costs than conventional approaches. To learn more, please visit: https://www.unqork.com.
+
+ 
+
+Media Contact:
+
+Dana Davis
+
+comms@unqork.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
